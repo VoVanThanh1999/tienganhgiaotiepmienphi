@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "sourceMap": false,
+    "noImplicitAny": false, 
     "types": ["cypress", "node"]
   },
   "extends": "../tsconfig.json",

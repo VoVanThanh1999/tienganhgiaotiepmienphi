@@ -4,6 +4,8 @@ import { Component, Inject } from '@angular/core';
 import { Cookie } from '@app/core/enums';
 import { StorageService } from '@app/shared/services';
 import { environment } from '@env/environment';
+import { MENU_ENTRIES } from '@core/constants';
+
 
 @Component({
   selector: 'app-header',
@@ -11,6 +13,8 @@ import { environment } from '@env/environment';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  readonly menuEntries = MENU_ENTRIES;
+
   public readonly logo = '/assets/images/logo.svg';
 
   public readonly lightAvatar =
@@ -28,6 +32,13 @@ export class HeaderComponent {
   constructor(@Inject(DOCUMENT) private readonly document: Document, private readonly storageService: StorageService) {
     this.setIsDarkMode(this.isDarkMode);
   }
+
+  isOpen = false;
+
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
+
 
   public toggleDarkMode(): void {
     this.isDarkMode = !this.isDarkMode;

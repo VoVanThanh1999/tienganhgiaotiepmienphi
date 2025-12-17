@@ -1,0 +1,8 @@
+<div>
+    <p>about works!</p>
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user?.name?.first }} @{{ user?.dob?.date }}
+      </li>
+    </ul>
+  </div>

@@ -12,7 +12,12 @@ const MENU_ENTRIES: MenuEntry[] = [
   {
     labelId: 'notFound',
     link: '/non-existent'
-  }
+  },
+  {
+    labelId: 'acc',
+    link: '/account'
+  },
+
 ];
 
 export { MENU_ENTRIES, MenuEntry };

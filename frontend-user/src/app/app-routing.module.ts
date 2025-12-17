@@ -6,6 +6,9 @@ import { localizeRoute } from './core/guards';
 import { languageResolver } from './core/resolvers';
 import { CustomRoutePreloadingStrategy } from './core/strategies';
 import { ErrorComponent } from './shared/components';
+// import { AuthGuard } from './core/guards/auth.guard';
+// import { ProfileComponent } from './features/profile/profile.component';
+
 
 const languageMatcher: UrlMatcher = (url: UrlSegment[]) => {
   const isAllowedLanguage =
@@ -43,6 +46,17 @@ const routes: Routes = [
     }
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule),
+  },
+  { path: 'account', loadChildren: () => import('./features/account/account.module').then(m => m.AccountModule) },
+
+  // { path: 'home', component: HomeComponent },
+  // { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
+  // { path: 'about', component: ProfileComponent, canActivate: [AuthGuard] },
+  // { path: 'secret', component: SecretComponent, canActivate: [AuthGuard] },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
     path: '**',
     component: ErrorComponent,
     data: {
@@ -60,7 +74,7 @@ const routes: Routes = [
           children: routes,
           resolve: [languageResolver]
         },
-        { path: '', canActivate: [localizeRoute], children: routes }
+        { path: '', canActivate: [localizeRoute], children: routes },
       ],
       {
         initialNavigation: 'enabledBlocking',

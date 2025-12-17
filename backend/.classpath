@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="english-speak-free-auth/src/main/java"/>
+	<classpathentry kind="src" path="english-speak-free-auth/src/test/java"/>
+	<classpathentry kind="src" path="english-speak-free-lesson/src/main/java"/>
+	<classpathentry kind="src" path="english-speak-free-lesson/src/test/java"/>
+	<classpathentry kind="src" path="english-speak-free-speaking/src/main/java"/>
+	<classpathentry kind="src" path="english-speak-free-speaking/src/test/java"/>
+	<classpathentry kind="lib" path="english-speak-free-auth/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="english-speak-free-lesson/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="english-speak-free-speaking/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danh sách bài học – English Hub</title>
+
+<style>
+:root{
+  --green:#e8f5e9;
+  --green-strong:#2e7d32;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --card:#ffffff;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+body{
+  margin:0;
+  background:#f9fbf9;
+  color:var(--text);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:white;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.menu{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-weight:700;
+  color:var(--green-strong);
+  font-size:18px;
+}
+nav{display:flex;gap:20px}
+nav a{font-size:14px;color:var(--muted)}
+nav a:hover{color:var(--green-strong)}
+.auth a{
+  font-size:14px;
+  padding:8px 14px;
+  border-radius:8px;
+  border:1px solid var(--border);
+}
+.auth a.primary{
+  background:var(--green-strong);
+  color:white;
+  border:none;
+  margin-left:8px;
+}
+
+/* ===== PAGE ===== */
+section{padding:70px 0}
+h1{font-size:34px}
+.desc{
+  color:var(--muted);
+  max-width:760px;
+  margin-top:10px;
+}
+
+/* ===== TABS ===== */
+.tabs{
+  display:flex;
+  gap:12px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+.tab{
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:white;
+  font-size:14px;
+}
+.tab.active{
+  background:var(--green-strong);
+  color:white;
+  border:none;
+}
+
+/* ===== LESSON LIST ===== */
+.lesson-list{
+  margin-top:40px;
+  display:grid;
+  gap:24px;
+}
+.lesson-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  display:grid;
+}
+@media(min-width:900px){
+  .lesson-card{
+    grid-template-columns:260px 1fr;
+  }
+}
+
+/* IMAGE */
+.lesson-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* CONTENT */
+.lesson-content{
+  padding:24px;
+  display:grid;
+  gap:16px;
+}
+.lesson-title{
+  font-size:20px;
+  font-weight:600;
+}
+.lesson-meta{
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* LEVEL BADGE */
+.level-badge{
+  margin-left:10px;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:999px;
+  font-weight:500;
+}
+.level-badge.a1{background:#e8f5e9;color:#2e7d32}
+.level-badge.a2{background:#e0f2fe;color:#0369a1}
+.level-badge.b1{background:#fef3c7;color:#92400e}
+.level-badge.b2{background:#fee2e2;color:#991b1b}
+
+/* TAGS */
+.lesson-tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.tag{
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:999px;
+  background:var(--green);
+  color:var(--green-strong);
+}
+
+/* FOOT */
+.lesson-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:10px;
+}
+.status{font-size:13px;color:#065f46}
+.status.done{color:#15803d}
+
+/* BUTTON */
+.btn{
+  padding:10px 18px;
+  border-radius:10px;
+  border:1px solid var(--green-strong);
+  background:white;
+  color:var(--green-strong);
+}
+.btn.primary{
+  background:var(--green-strong);
+  color:white;
+  border:none;
+}
+
+/* ===== PAGINATION ===== */
+.pagination{
+  margin-top:50px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+.page-btn{
+  padding:8px 14px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:white;
+  font-size:14px;
+}
+.page-btn.active{
+  background:var(--green-strong);
+  color:white;
+  border:none;
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  background:white;
+  border-top:1px solid var(--border);
+  padding:48px 0 20px;
+  margin-top:80px;
+}
+.footer-grid{
+  display:grid;
+  gap:32px;
+}
+@media(min-width:900px){
+  .footer-grid{grid-template-columns:2fr 1fr 1fr}
+}
+.footer-logo{
+  font-weight:700;
+  color:var(--green-strong);
+  font-size:18px;
+}
+.footer-desc{
+  margin-top:12px;
+  font-size:14px;
+  color:var(--muted);
+  max-width:360px;
+}
+.site-footer h4{
+  font-size:15px;
+  margin-bottom:12px;
+}
+.site-footer a{
+  display:block;
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+.site-footer a:hover{color:var(--green-strong)}
+.footer-bottom{
+  border-top:1px solid var(--border);
+  margin-top:32px;
+  padding-top:16px;
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container menu">
+    <div class="logo">English Hub</div>
+    <nav>
+      <a href="#">Trang chủ</a>
+      <a href="#">Bài học</a>
+      <a href="#">Luyện nói</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="auth">
+      <a href="#">Đăng nhập</a>
+      <a href="#" class="primary">Học miễn phí</a>
+    </div>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<section class="container">
+  <h1>Danh sách bài học</h1>
+  <p class="desc">
+    Các bài học được sắp xếp sẵn theo lộ trình.
+    Mỗi bài ngắn, tập trung vào giao tiếp thực tế.
+  </p>
+
+  <div class="tabs">
+    <div class="tab active">Beginner</div>
+    <div class="tab">Intermediate</div>
+    <div class="tab">Advanced</div>
+  </div>
+
+  <div class="lesson-list">
+
+    <div class="lesson-card">
+      <div class="lesson-img">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+      </div>
+      <div class="lesson-content">
+        <div>
+          <div class="lesson-title">
+            Lesson 1 – Nói về cảm xúc khi mệt mỏi
+            <span class="level-badge a1">A1</span>
+          </div>
+          <div class="lesson-meta">⏱ 15 phút · Chủ đề: Cảm xúc</div>
+        </div>
+        <div class="lesson-tags">
+          <div class="tag">Listening</div>
+          <div class="tag">Grammar</div>
+          <div class="tag">Speaking</div>
+        </div>
+        <div class="lesson-footer">
+          <div class="status">Chưa học</div>
+          <button class="btn primary">Bắt đầu học</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <div class="lesson-img">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
+      </div>
+      <div class="lesson-content">
+        <div>
+          <div class="lesson-title">
+            Lesson 2 – Diễn đạt áp lực công việc
+            <span class="level-badge a2">A2</span>
+          </div>
+          <div class="lesson-meta">⏱ 18 phút · Chủ đề: Công việc</div>
+        </div>
+        <div class="lesson-tags">
+          <div class="tag">Listening</div>
+          <div class="tag">Speaking</div>
+        </div>
+        <div class="lesson-footer">
+          <div class="status done">Đã học</div>
+          <button class="btn">Xem lại</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-card">
+      <div class="lesson-img">
+        <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6">
+      </div>
+      <div class="lesson-content">
+        <div>
+          <div class="lesson-title">
+            Lesson 3 – Nói về thói quen hằng ngày
+            <span class="level-badge b1">B1</span>
+          </div>
+          <div class="lesson-meta">⏱ 12 phút · Chủ đề: Sinh hoạt</div>
+        </div>
+        <div class="lesson-tags">
+          <div class="tag">Grammar</div>
+          <div class="tag">Speaking</div>
+        </div>
+        <div class="lesson-footer">
+          <div class="status">Chưa học</div>
+          <button class="btn primary">Bắt đầu học</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="pagination">
+    <button class="page-btn">‹</button>
+    <button class="page-btn active">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">3</button>
+    <button class="page-btn">›</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-logo">English Hub</div>
+      <p class="footer-desc">
+        Nền tảng học tiếng Anh giao tiếp miễn phí cho người Việt.
+        Học để nói được – dùng được – và tiến bộ thật.
+      </p>
+    </div>
+
+    <div>
+      <h4>Học tập</h4>
+      <a href="#">Danh sách bài học</a>
+      <a href="#">Luyện nói</a>
+      <a href="#">Lộ trình học</a>
+    </div>
+
+    <div>
+      <h4>Tài nguyên</h4>
+      <a href="#">Ngữ pháp cơ bản</a>
+      <a href="#">Các thì thông dụng</a>
+      <a href="#">Động từ bất quy tắc</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 English Hub – Học tiếng Anh miễn phí cho người Việt
+  </div>
+</footer>
+
+</body>
+</html>

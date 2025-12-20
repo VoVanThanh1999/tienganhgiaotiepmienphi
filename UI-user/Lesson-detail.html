@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 22 – Making Decisions & Choices | English Hub</title>
+
+<style>
+:root{
+  --green:#e8f5e9;
+  --green-strong:#2e7d32;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --bg:#f9fbf9;
+  --note:#fff7cc;
+  --note-border:#facc15;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);line-height:1.7}
+.container{max-width:920px;margin:0 auto;padding:0 20px}
+
+/* ===== HEADER ===== */
+header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.menu{height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;color:var(--green-strong)}
+nav{display:flex;gap:20px}
+nav a{font-size:14px;color:var(--muted)}
+nav a:hover{color:var(--green-strong)}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;height:300px;
+  background:url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70") center/cover no-repeat;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.65));
+}
+.hero-content{position:absolute;bottom:24px;width:100%;color:#fff}
+.hero-badge{
+  display:inline-block;padding:6px 14px;border-radius:999px;
+  background:#ffffffdd;color:#065f46;font-size:13px;font-weight:600
+}
+.hero h1{margin:14px 0 6px;font-size:36px}
+.hero p{max-width:720px}
+.hero-meta{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+.meta-tag{
+  background:#ffffffdd;color:#1f2937;
+  padding:6px 14px;border-radius:999px;font-size:13px
+}
+
+/* ===== SECTION ===== */
+section{padding:56px 0}
+.block{
+  background:#fff;border:1px solid var(--border);
+  border-radius:16px;padding:28px;margin-bottom:28px
+}
+h2{margin-top:0;font-size:24px}
+.desc{color:var(--muted);font-size:15px}
+
+/* ===== TABLE ===== */
+table{width:100%;border-collapse:collapse;margin-top:16px}
+th,td{border:1px solid var(--border);padding:10px;vertical-align:top}
+th{background:#f3f4f6}
+
+/* ===== BOX ===== */
+.box{
+  background:#f9fafb;border-left:4px solid var(--green-strong);
+  padding:14px;border-radius:10px;margin-top:14px
+}
+.tips{background:#f0fdf4;border-color:#22c55e}
+
+/* ===== VIDEO ===== */
+.video-grid{display:grid;gap:20px}
+@media(min-width:900px){.video-grid{grid-template-columns:1fr 1fr}}
+.video-card{border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.video-title{padding:10px 14px;background:#f9fafb;font-weight:600}
+iframe{width:100%;height:220px;border:none}
+
+/* ===== FORM ===== */
+textarea{
+  width:100%;min-height:110px;padding:10px;
+  border-radius:8px;border:1px solid var(--border)
+}
+textarea:focus{outline:none;border-color:var(--green-strong)}
+.btn{
+  margin-top:10px;padding:10px 18px;border-radius:8px;
+  border:1px solid var(--green-strong);background:#fff;color:var(--green-strong)
+}
+.btn.primary{background:var(--green-strong);color:#fff}
+
+/* ===== NOTE ===== */
+.note-toggle{
+  position:fixed;right:24px;bottom:24px;
+  width:52px;height:52px;border-radius:50%;
+  background:var(--note);border:1px solid var(--note-border);
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  font-size:22px;cursor:pointer;z-index:999
+}
+.note-panel{
+  position:fixed;right:24px;bottom:90px;width:300px;
+  background:var(--note);border:1px solid var(--note-border);
+  border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);
+  display:none;z-index:999
+}
+.note-header{
+  padding:10px 14px;font-weight:600;
+  border-bottom:1px solid var(--note-border);
+  display:flex;justify-content:space-between
+}
+.note-tabs span{cursor:pointer;font-size:13px;color:#92400e;margin-left:8px}
+.note-content{padding:12px}
+.note-history{max-height:160px;overflow:auto;font-size:13px}
+.note-item{padding:6px 0;border-bottom:1px dashed #e5e7eb}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;font-size:14px;color:var(--muted)}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container menu">
+    <div class="logo">English Hub</div>
+    <nav>
+      <a href="#">Trang chủ</a>
+      <a href="#">Bài học</a>
+      <a href="#">Luyện nói</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="container">
+      <span class="hero-badge">🔥 DAY 22</span>
+      <h1>Making Decisions & Choices</h1>
+      <p>Diễn đạt quyết định, lựa chọn và lý do — rất hay dùng trong giao tiếp & phỏng vấn.</p>
+      <div class="hero-meta">
+        <span class="meta-tag">Level B1 → B1+</span>
+        <span class="meta-tag">⏱ 15–20 phút</span>
+        <span class="meta-tag">🎯 Speaking</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="container">
+  <div class="block">
+    <h2>🌟 Mục tiêu bài học</h2>
+    <ul>
+      <li>Dùng decide / choose / prefer / would rather đúng ngữ cảnh</li>
+      <li>Nói rõ vì sao chọn A thay vì B</li>
+      <li>Rèn phản xạ nói B1</li>
+    </ul>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <h2>1️⃣ Vocabulary</h2>
+    <table>
+      <tr><th>Từ</th><th>IPA</th><th>Nghĩa</th><th>Ví dụ</th></tr>
+      <tr><td>decide</td><td>/dɪˈsaɪd/</td><td>quyết định</td><td>I decided to learn English.</td></tr>
+      <tr><td>choose</td><td>/tʃuːz/</td><td>chọn</td><td>I chose this option.</td></tr>
+      <tr><td>prefer</td><td>/prɪˈfɜːr/</td><td>thích hơn</td><td>I prefer studying at night.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <h2>2️⃣ Grammar</h2>
+    <div class="box">
+      decide to + V1 → I decided to learn English.<br>
+      prefer A to B → I prefer coffee to tea.<br>
+      would rather A than B → I’d rather learn English than watch TV.
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <h2>3️⃣ Listening</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-title">How to Make Better Decisions</div>
+        <iframe src="https://www.youtube.com/embed/5C0bA3cJQYI"></iframe>
+      </div>
+      <div class="video-card">
+        <div class="video-title">Talking About Choices (B1)</div>
+        <iframe src="https://www.youtube.com/embed/2bZ6sZ6nOaA"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <h2>4️⃣ Shadowing Script</h2>
+    <p>
+      Every day, I have to make many decisions.<br>
+      Sometimes I choose to study instead of relaxing.<br>
+      I prefer learning English at night.<br>
+      When I choose growth over comfort, I grow faster.
+    </p>
+    <div class="box tips">
+      <strong>Tips shadowing:</strong>
+      <ul>
+        <li>Nghe từng câu → dừng → nói theo</li>
+        <li>Bắt chước nhịp & ngữ điệu</li>
+        <li>Nói chậm cũng được, rõ là quan trọng</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <h2>5️⃣ Grammar Practice</h2>
+    <ol>
+      <li>I ___ to study English every day.</li>
+      <li>She ___ this job because it offers opportunities.</li>
+      <li>I ___ coffee ___ tea.</li>
+    </ol>
+    <textarea placeholder="Viết câu trả lời..."></textarea>
+    <button class="btn primary">Gửi bài</button>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <h2>6️⃣ Translation Practice</h2>
+    <h4>A. Dễ</h4>
+    <ol>
+      <li>Tôi quyết định học tiếng Anh.</li>
+      <li>Tôi thích cà phê hơn trà.</li>
+    </ol>
+    <h4>B. Trung bình</h4>
+    <ol>
+      <li>Tôi thích học ở nhà hơn ra ngoài.</li>
+    </ol>
+    <h4>C. Khó</h4>
+    <ol>
+      <li>Tôi tin lựa chọn đúng sẽ thay đổi cuộc sống.</li>
+    </ol>
+    <textarea placeholder="Viết bản dịch..."></textarea>
+    <button class="btn primary">Gửi bản dịch</button>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <h2>7️⃣ Speaking Task</h2>
+    <div class="box">
+      <ul>
+        <li>Một quyết định quan trọng bạn đã đưa ra</li>
+        <li>Vì sao bạn chọn như vậy</li>
+        <li>Một lựa chọn khác bạn không chọn</li>
+        <li>Bạn học được gì</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 English Hub – Học tiếng Anh miễn phí cho người Việt
+</footer>
+
+<!-- NOTE -->
+<button class="note-toggle" onclick="toggleNote()">📝</button>
+
+<div class="note-panel" id="notePanel">
+  <div class="note-header">
+    Ghi chú
+    <div class="note-tabs">
+      <span onclick="showTab('write')">Viết</span>
+      <span onclick="showTab('history')">Lịch sử</span>
+    </div>
+  </div>
+  <div class="note-content" id="noteWrite">
+    <textarea id="noteText" placeholder="Ghi từ mới, lỗi sai..."></textarea>
+    <button class="btn primary" onclick="saveNote()">Lưu</button>
+  </div>
+  <div class="note-content" id="noteHistory" style="display:none">
+    <div class="note-history" id="historyList"></div>
+  </div>
+</div>
+
+<script>
+const panel=document.getElementById("notePanel");
+const text=document.getElementById("noteText");
+const historyList=document.getElementById("historyList");
+
+function toggleNote(){panel.style.display=panel.style.display==="block"?"none":"block"}
+function showTab(t){
+  document.getElementById("noteWrite").style.display=t==="write"?"block":"none";
+  document.getElementById("noteHistory").style.display=t==="history"?"block":"none";
+  renderHistory();
+}
+function saveNote(){
+  if(!text.value.trim())return;
+  const h=JSON.parse(localStorage.getItem("notes")||"[]");
+  h.unshift({t:text.value,time:new Date().toLocaleString()});
+  localStorage.setItem("notes",JSON.stringify(h));
+  text.value="";
+}
+function renderHistory(){
+  const h=JSON.parse(localStorage.getItem("notes")||"[]");
+  historyList.innerHTML="";
+  h.forEach(n=>{
+    const d=document.createElement("div");
+    d.className="note-item";
+    d.innerHTML=`${n.t}<br><small>${n.time}</small>`;
+    historyList.appendChild(d);
+  });
+}
+</script>
+
+</body>
+</html>

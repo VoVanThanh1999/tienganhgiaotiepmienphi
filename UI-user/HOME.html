@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Hub – Học tiếng Anh miễn phí cho người Việt</title>
+
+<style>
+:root{
+  --green:#e8f5e9;
+  --green-strong:#2e7d32;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --card:#ffffff;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+body{
+  margin:0;
+  background:#f9fbf9;
+  color:var(--text);
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:white;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.menu{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-weight:700;
+  color:var(--green-strong);
+  font-size:18px;
+}
+nav{
+  display:flex;
+  gap:20px;
+}
+nav a{
+  font-size:14px;
+  color:var(--muted);
+}
+nav a:hover{color:var(--green-strong)}
+.auth a{
+  font-size:14px;
+  padding:8px 14px;
+  border-radius:8px;
+  border:1px solid var(--border);
+}
+.auth a.primary{
+  background:var(--green-strong);
+  color:white;
+  border:none;
+  margin-left:8px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:var(--green);
+  padding:90px 0;
+}
+.hero-grid{
+  display:grid;
+  gap:48px;
+  align-items:center;
+}
+@media(min-width:900px){
+  .hero-grid{
+    grid-template-columns:1.1fr 0.9fr;
+  }
+}
+.hero h1{
+  font-size:44px;
+}
+.hero-main{
+  margin-top:20px;
+  font-size:20px;
+  color:#374151;
+}
+.hero-sub{
+  margin-top:14px;
+  font-size:16px;
+  color:var(--muted);
+}
+.hero-strong{
+  margin-top:16px;
+  font-size:16px;
+}
+.hero-actions{
+  margin-top:30px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:12px 24px;
+  border-radius:10px;
+  border:1px solid var(--green-strong);
+  background:white;
+  color:var(--green-strong);
+  cursor:pointer;
+}
+.btn.primary{
+  background:var(--green-strong);
+  color:white;
+}
+.hero img{
+  width:100%;
+  border-radius:26px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:80px 0;
+}
+h2{
+  font-size:30px;
+}
+.desc{
+  max-width:760px;
+  margin-top:10px;
+  color:var(--muted);
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  gap:24px;
+  margin-top:36px;
+}
+@media(min-width:900px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+}
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px;
+}
+
+/* ===== ROADMAP ===== */
+.roadmap-soft{
+  margin-top:36px;
+}
+.road-soft{
+  display:flex;
+  gap:24px;
+  padding:28px 0;
+  border-bottom:1px solid var(--border);
+}
+.road-soft:last-child{border-bottom:none}
+.road-index{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:var(--green-strong);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  margin-top:4px;
+}
+.road-detail{
+  padding-left:18px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ===== KNOWLEDGE ===== */
+.knowledge-grid{
+  display:grid;
+  gap:24px;
+  margin-top:36px;
+}
+@media(min-width:900px){
+  .knowledge-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+.knowledge-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:26px;
+  transition:.25s ease;
+}
+.knowledge-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 36px rgba(0,0,0,.08);
+}
+.knowledge-card span{
+  display:block;
+  margin-top:12px;
+  color:var(--green-strong);
+  font-size:14px;
+  font-weight:500;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  border-top:1px solid var(--border);
+  padding:28px 0;
+  color:var(--muted);
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container menu">
+    <div class="logo">English Hub</div>
+    <nav>
+      <a href="#">Trang chủ</a>
+      <a href="#">Bài học</a>
+      <a href="#">Luyện nói</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="auth">
+      <a href="#">Đăng nhập</a>
+      <a href="#" class="primary">Học miễn phí</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Học tiếng Anh miễn phí.</h1>
+
+      <p class="hero-main">
+        <strong>
+          Lộ trình này đã được thiết kế để bạn vẫn giao tiếp giỏi được,
+          kể cả khi bạn rất bận.
+        </strong>
+      </p>
+
+      <p class="hero-main">
+        Bạn học để nói được điều mình nghĩ,
+        trong đời sống và công việc — không học cho có.
+      </p>
+
+      <p class="hero-sub">
+        Mỗi ngày chỉ một bài ngắn.
+        Có luyện nghe, rèn ngữ pháp.
+        Có <strong>AI sửa phát âm</strong> và rèn phản xạ nói.
+      </p>
+
+      <p class="hero-strong">
+        Toàn bộ nội dung miễn phí.
+        Không cần ra trung tâm.
+        Nội dung được thiết kế bởi chuyên gia nhiều năm kinh nghiệm.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn primary">Học ngay – miễn phí</button>
+        <button class="btn">Xem lộ trình</button>
+      </div>
+    </div>
+
+    <img src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8">
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="container">
+  <h2>Vì sao học ở đây vẫn giao tiếp giỏi được?</h2>
+  <p class="desc">
+    Đây không phải nền tảng dạy bạn nói cho hay,
+    mà là nơi giúp bạn nói được – dùng được – và tiến bộ thật.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🗣 Giao tiếp đời sống thật</h3>
+      <p>Nói về công việc, cảm xúc, áp lực và cuộc sống hằng ngày.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎧 Nghe – Ngữ pháp – Phản xạ</h3>
+      <p>Nghe ngắn mỗi ngày, ngữ pháp vừa đủ để nói đúng.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 AI sửa phát âm</h3>
+      <p>Sửa phát âm, rèn phản xạ nói để nói rõ và tự tin hơn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section class="container">
+  <h2>Các mức độ học</h2>
+  <p class="desc">Học từ dễ đến khó, theo đúng lộ trình.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Beginner – Nền tảng giao tiếp</h3>
+      <p>Câu đơn giản · Cảm xúc · Sinh hoạt</p>
+      <p class="desc">Bắt đầu nói được</p>
+    </div>
+
+    <div class="card">
+      <h3>Intermediate – Giao tiếp công việc</h3>
+      <p>Áp lực · Thói quen · Suy nghĩ</p>
+      <p class="desc">Giao tiếp ổn định</p>
+    </div>
+
+    <div class="card">
+      <h3>Advanced – Giao tiếp tự tin</h3>
+      <p>Quan điểm · Cảm xúc phức tạp</p>
+      <p class="desc">Nói trôi chảy</p>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="container">
+  <h2>Lộ trình học đã được thiết kế sẵn</h2>
+  <p class="desc">Từ những câu đơn giản đến khi bạn nói rõ ràng suy nghĩ của mình.</p>
+
+  <div class="roadmap-soft">
+    <div class="road-soft">
+      <div class="road-index">1</div>
+      <div>
+        <h3>🌱 Nền tảng</h3>
+        <p>Nghe · Ngữ pháp · Phát âm cơ bản</p>
+        <ul class="road-detail">
+          <li>Các thì thông dụng</li>
+          <li>Động từ bất quy tắc (V1 · V2 · V3)</li>
+          <li>Tính từ · Trạng từ · Câu cơ bản</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="road-soft">
+      <div class="road-index">2</div>
+      <div>
+        <h3>🌿 Mở rộng</h3>
+        <p>Công việc · Áp lực · Phản xạ</p>
+        <ul class="road-detail">
+          <li>Dùng đúng thì trong ngữ cảnh</li>
+          <li>Nói về công việc & cuộc sống</li>
+          <li>Rèn phản xạ hội thoại</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="road-soft">
+      <div class="road-index">3</div>
+      <div>
+        <h3>🌳 Tự tin</h3>
+        <p>Giao tiếp trôi chảy · Nói tự nhiên</p>
+        <ul class="road-detail">
+          <li>Nói liền mạch</li>
+          <li>Diễn đạt suy nghĩ rõ ràng</li>
+          <li>Giao tiếp tự nhiên</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KNOWLEDGE -->
+<section class="container">
+  <h2>Nội dung học phổ biến</h2>
+  <p class="desc">
+    Tất cả kiến thức nền tảng cần thiết để giao tiếp tốt
+    đều có trên website.
+  </p>
+
+  <div class="knowledge-grid">
+    <div class="knowledge-card">
+      <h3>🕒 Các thì hay dùng</h3>
+      <p>Hiện tại, quá khứ, tương lai… học qua ví dụ giao tiếp.</p>
+      <span>→ Xem bài viết</span>
+    </div>
+
+    <div class="knowledge-card">
+      <h3>🔁 Động từ bất quy tắc</h3>
+      <p>Học V1 · V2 · V3 theo ngữ cảnh, không học vẹt.</p>
+      <span>→ Xem danh sách</span>
+    </div>
+
+    <div class="knowledge-card">
+      <h3>📝 Tính từ & Trạng từ</h3>
+      <p>Cách dùng đúng trong nói & viết.</p>
+      <span>→ Xem chi tiết</span>
+    </div>
+
+    <div class="knowledge-card">
+      <h3>📐 Cấu trúc câu thông dụng</h3>
+      <p>too / enough, so / such, câu điều kiện…</p>
+      <span>→ Xem cấu trúc</span>
+    </div>
+
+    <div class="knowledge-card">
+      <h3>🎧 Luyện nghe giao tiếp</h3>
+      <p>Nghe ngắn, quen âm, nói tự nhiên.</p>
+      <span>→ Luyện nghe</span>
+    </div>
+
+    <div class="knowledge-card">
+      <h3>🗣 Luyện nói & phản xạ</h3>
+      <p>Nói về cảm xúc, công việc, đời sống.</p>
+      <span>→ Luyện nói</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2025 English Hub – Học tiếng Anh miễn phí cho người Việt
+  </div>
+</footer>
+
+</body>
+</html>

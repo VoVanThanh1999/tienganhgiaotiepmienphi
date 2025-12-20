@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiến độ học – English Hub</title>
+
+<style>
+:root{
+  --green:#e8f5e9;
+  --green-strong:#2e7d32;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+body{
+  margin:0;
+  background:#f9fbf9;
+  color:var(--text);
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+
+/* ===== HEADER ===== */
+header{
+  background:white;
+  border-bottom:1px solid var(--border);
+}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+.menu{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-weight:700;
+  color:var(--green-strong);
+}
+nav{
+  display:flex;
+  gap:20px;
+}
+nav a{
+  font-size:14px;
+  color:var(--muted);
+}
+nav a:hover{color:var(--green-strong)}
+
+/* ===== PAGE HEADER ===== */
+.page-header{
+  background:var(--green);
+  padding:60px 0;
+}
+.page-header h1{
+  font-size:34px;
+}
+.page-desc{
+  margin-top:10px;
+  color:#374151;
+}
+
+/* ===== OVERVIEW ===== */
+.overview{
+  display:grid;
+  gap:24px;
+  margin-top:40px;
+}
+@media(min-width:900px){
+  .overview{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+.overview-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:26px;
+}
+.overview-card h3{
+  font-size:14px;
+  color:var(--muted);
+}
+.overview-card strong{
+  display:block;
+  margin-top:10px;
+  font-size:28px;
+  color:var(--green-strong);
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar{
+  background:#e5e7eb;
+  border-radius:999px;
+  overflow:hidden;
+  height:10px;
+  margin-top:14px;
+}
+.progress-bar span{
+  display:block;
+  height:100%;
+  background:var(--green-strong);
+}
+
+/* ===== SKILLS ===== */
+.skills{
+  margin-top:60px;
+}
+.skill{
+  margin-bottom:24px;
+}
+.skill-header{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+/* ===== LESSONS ===== */
+.lessons{
+  margin-top:60px;
+}
+.lesson-grid{
+  display:grid;
+  gap:20px;
+}
+@media(min-width:900px){
+  .lesson-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+.lesson-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+}
+.lesson-card.done{
+  border-color:var(--green-strong);
+  background:#f1f8f3;
+}
+.lesson-card.locked{
+  opacity:.5;
+}
+.lesson-status{
+  font-size:12px;
+  margin-bottom:8px;
+  color:var(--muted);
+}
+.lesson-card.done .lesson-status{
+  color:var(--green-strong);
+  font-weight:500;
+}
+
+/* ===== CTA ===== */
+.cta{
+  margin:80px 0;
+  text-align:center;
+}
+.btn{
+  padding:14px 28px;
+  border-radius:12px;
+  background:var(--green-strong);
+  color:white;
+  border:none;
+  font-size:15px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container menu">
+    <div class="logo">English Hub</div>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="tenses.html">Các thì</a>
+      <a href="progress.html">Tiến độ</a>
+      <a href="#">Luyện nói</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Tiến độ học của bạn</h1>
+    <p class="page-desc">
+      Học đều mỗi ngày, bạn sẽ thấy mình tiến bộ rất rõ 🚀
+    </p>
+  </div>
+</section>
+
+<section class="container">
+
+  <!-- OVERVIEW -->
+  <div class="overview">
+    <div class="overview-card">
+      <h3>Tổng tiến độ</h3>
+      <strong>42%</strong>
+      <div class="progress-bar"><span style="width:42%"></span></div>
+    </div>
+
+    <div class="overview-card">
+      <h3>Bài đã học</h3>
+      <strong>8 / 19</strong>
+    </div>
+
+    <div class="overview-card">
+      <h3>Chuỗi ngày học</h3>
+      <strong>5 ngày 🔥</strong>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="skills">
+    <h2>Kỹ năng</h2>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>Ngữ pháp</span>
+        <span>60%</span>
+      </div>
+      <div class="progress-bar"><span style="width:60%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>Nghe</span>
+        <span>40%</span>
+      </div>
+      <div class="progress-bar"><span style="width:40%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>Nói</span>
+        <span>30%</span>
+      </div>
+      <div class="progress-bar"><span style="width:30%"></span></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>Từ vựng</span>
+        <span>50%</span>
+      </div>
+      <div class="progress-bar"><span style="width:50%"></span></div>
+    </div>
+  </div>
+
+  <!-- LESSONS -->
+  <div class="lessons">
+    <h2>Bài học</h2>
+
+    <div class="lesson-grid">
+      <div class="lesson-card done">
+        <div class="lesson-status">✅ Đã học</div>
+        <h3>Present Simple</h3>
+      </div>
+
+      <div class="lesson-card done">
+        <div class="lesson-status">✅ Đã học</div>
+        <h3>Present Continuous</h3>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-status">⏳ Đang học</div>
+        <h3>Past Simple</h3>
+      </div>
+
+      <div class="lesson-card locked">
+        <div class="lesson-status">🔒 Chưa mở</div>
+        <h3>Present Perfect</h3>
+      </div>
+
+      <div class="lesson-card locked">
+        <div class="lesson-status">🔒 Chưa mở</div>
+        <h3>Future Simple</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <button class="btn">👉 Tiếp tục bài đang học</button>
+  </div>
+
+</section>
+
+</body>
+</html>

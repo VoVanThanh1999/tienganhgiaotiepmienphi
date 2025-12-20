@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng nhập – English Hub</title>
+
+<style>
+:root{
+  --green:#e8f5e9;
+  --green-strong:#2e7d32;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --card:#ffffff;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+body{
+  margin:0;
+  background:#f9fbf9;
+  color:var(--text);
+}
+
+/* ===== HEADER ===== */
+header{
+  background:white;
+  border-bottom:1px solid var(--border);
+}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+.menu{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-weight:700;
+  color:var(--green-strong);
+  font-size:18px;
+}
+nav{
+  display:flex;
+  gap:20px;
+}
+nav a{
+  font-size:14px;
+  color:var(--muted);
+}
+nav a:hover{color:var(--green-strong)}
+
+/* ===== LOGIN ===== */
+.login-wrap{
+  min-height:calc(100vh - 64px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+}
+.login-box{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:24px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  max-width:900px;
+  width:100%;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.08);
+}
+
+/* ===== FORM ===== */
+.login-form{
+  padding:48px;
+}
+.login-form h1{
+  font-size:28px;
+  margin-bottom:8px;
+}
+.login-desc{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:28px;
+}
+.form-group{
+  margin-bottom:18px;
+}
+label{
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+}
+input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  font-size:14px;
+}
+input:focus{
+  outline:none;
+  border-color:var(--green-strong);
+}
+.options{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  color:var(--muted);
+  margin:12px 0 24px;
+}
+.options a{color:var(--green-strong)}
+.btn{
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:none;
+  background:var(--green-strong);
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+.btn:hover{opacity:.95}
+.register{
+  margin-top:24px;
+  text-align:center;
+  font-size:14px;
+}
+.register a{
+  color:var(--green-strong);
+  font-weight:500;
+}
+
+/* ===== IMAGE ===== */
+.login-image{
+  background:var(--green);
+  position:relative;
+}
+.login-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.image-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(46,125,50,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-align:center;
+  padding:40px;
+}
+.image-overlay h2{
+  font-size:28px;
+  margin-bottom:12px;
+}
+.image-overlay p{
+  font-size:15px;
+  opacity:.95;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .login-box{
+    grid-template-columns:1fr;
+  }
+  .login-image{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container menu">
+    <div class="logo">English Hub</div>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="#">Bài học</a>
+      <a href="#">Luyện nói</a>
+      <a href="#">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<section class="login-wrap">
+  <div class="login-box">
+
+    <!-- FORM -->
+    <div class="login-form">
+      <h1>Đăng nhập</h1>
+      <p class="login-desc">
+        Tiếp tục hành trình nói tiếng Anh tự tin mỗi ngày 🚀
+      </p>
+
+      <form>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" placeholder="••••••••">
+        </div>
+
+        <div class="options">
+          <label><input type="checkbox"> Ghi nhớ đăng nhập</label>
+          <a href="#">Quên mật khẩu?</a>
+        </div>
+
+        <button class="btn">Đăng nhập</button>
+      </form>
+
+      <div class="register">
+        Chưa có tài khoản?
+        <a href="#">Đăng ký miễn phí</a>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="login-image">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+      <div class="image-overlay">
+        <div>
+          <h2>Học để nói được</h2>
+          <p>
+            Không học lan man.<br>
+            Mỗi ngày một chút – giao tiếp thật.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

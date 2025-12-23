@@ -1,0 +1,16 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: lesson-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/english_learning
+    username: postgres
+    password: 1234
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

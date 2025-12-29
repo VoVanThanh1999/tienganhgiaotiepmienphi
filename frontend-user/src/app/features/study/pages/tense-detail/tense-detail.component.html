@@ -1,0 +1,64 @@
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <span class="badge">{{ tense.badge }}</span>
+    <h1>{{ tense.title }}</h1>
+    <p class="page-desc">{{ tense.description }}</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+  <!-- WHEN -->
+  <section>
+    <h2>1️⃣ Khi nào dùng?</h2>
+    <div class="card">
+      <ul>
+        <li *ngFor="let item of tense.when">{{ item }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STRUCTURE -->
+  <section>
+    <h2>2️⃣ Cấu trúc câu</h2>
+    <div class="card">
+      <strong>Khẳng định</strong>
+      <div class="structure">{{ tense.structure.affirmative }}</div>
+
+      <strong class="block">Phủ định</strong>
+      <div class="structure">{{ tense.structure.negative }}</div>
+
+      <strong class="block">Câu hỏi</strong>
+      <div class="structure">{{ tense.structure.question }}</div>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section>
+    <h2>3️⃣ Ví dụ giao tiếp</h2>
+    <div class="card">
+      <div class="example" *ngFor="let ex of tense.examples">
+        {{ ex.en }}
+        <span>{{ ex.vi }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISTAKES -->
+  <section>
+    <h2>4️⃣ Lỗi người Việt hay gặp</h2>
+    <div class="card">
+      <div class="mistake" *ngFor="let m of tense.mistakes">
+        ❌ {{ m.wrong }} <br />
+        ✅ {{ m.correct }}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <button class="btn">🎤 Luyện nói với AI</button>
+    <button class="btn secondary">📝 Làm quiz nhanh</button>
+  </div>
+</div>

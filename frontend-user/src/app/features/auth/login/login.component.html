@@ -1,0 +1,81 @@
+<div
+  class="pt-10 mx-auto animate-fade-in grid w-full max-w-[900px] grid-cols-1 overflow-hidden rounded-[24px] border border-gray-200 bg-white shadow-2xl md:grid-cols-2"
+>
+  <div class="p-8 md:p-12">
+    <h1 class="mb-2 text-3xl font-bold tracking-tight">Đăng nhập</h1>
+    <p class="mb-7 text-sm text-gray-500">Tiếp tục hành trình nói tiếng Anh tự tin mỗi ngày 🚀</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label class="mb-1.5 block text-sm font-medium text-gray-700">Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="you@example.com"
+          [class.border-red-500]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm transition-all focus:border-[#2e7d32] focus:outline-none focus:ring-1 focus:ring-[#2e7d32]"
+        />
+        <span
+          class="mt-1 text-xs text-red-500"
+          *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        >
+          Email không hợp lệ
+        </span>
+      </div>
+
+      <div>
+        <label class="mb-1.5 block text-sm font-medium text-gray-700">Mật khẩu</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="••••••••"
+          [class.border-red-500]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+          class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm transition-all focus:border-[#2e7d32] focus:outline-none focus:ring-1 focus:ring-[#2e7d32]"
+        />
+      </div>
+
+      <div class="my-4 flex items-center justify-between text-xs text-gray-500">
+        <label class="flex cursor-pointer items-center gap-2">
+          <input type="checkbox" formControlName="rememberMe" class="h-4 w-4 rounded accent-[#2e7d32]" />
+          Ghi nhớ đăng nhập
+        </label>
+        <a href="#" class="font-semibold text-[#2e7d32] hover:underline">Quên mật khẩu?</a>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="isLoading"
+        class="flex w-full items-center justify-center rounded-xl bg-[#2e7d32] py-3.5 font-bold text-white transition-colors hover:bg-[#1b5e20] disabled:opacity-50"
+      >
+        <span *ngIf="!isLoading">Đăng nhập</span>
+        <div
+          *ngIf="isLoading"
+          class="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"
+        ></div>
+      </button>
+    </form>
+
+    <div class="mt-8 text-center text-sm text-gray-600">
+      Chưa có tài khoản?
+      <a routerLink="/auth/register" class="ml-1 font-bold text-[#2e7d32] hover:underline">Đăng ký miễn phí</a>
+    </div>
+  </div>
+
+  <div class="relative hidden overflow-hidden md:block">
+    <img
+      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+      class="h-full w-full transform object-cover transition-transform duration-700 hover:scale-105"
+    />
+    <div
+      class="absolute inset-0 flex items-center justify-center bg-[#2e7d32]/60 p-10 text-center text-white backdrop-blur-[2px]"
+    >
+      <div>
+        <h2 class="mb-4 text-3xl font-bold">Học để nói được</h2>
+        <p class="text-base font-light leading-relaxed opacity-90">
+          Không học lan man.<br />
+          Mỗi ngày một chút – giao tiếp thật.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

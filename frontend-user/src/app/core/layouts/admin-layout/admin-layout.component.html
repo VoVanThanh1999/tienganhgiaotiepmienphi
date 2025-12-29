@@ -1,0 +1,20 @@
+
+  <div class="g-sidenav-show bg-gray-100">
+    <!-- SIDEBAR -->
+    <app-admin-sidebar></app-admin-sidebar>
+  
+    <!-- MAIN CONTENT -->
+    <main class="main-content position-relative border-radius-lg">
+      <!-- NAVBAR -->
+      <app-admin-navbar></app-admin-navbar>
+  
+      <!-- PAGE CONTENT -->
+      <div class="container-fluid py-4 min-vh-100">
+        <router-outlet></router-outlet>
+  
+        <!-- FOOTER -->
+        <app-admin-footer></app-admin-footer>
+      </div>
+    </main>
+  </div>
+  

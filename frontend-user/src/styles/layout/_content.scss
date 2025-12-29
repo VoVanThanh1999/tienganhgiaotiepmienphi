@@ -3,5 +3,6 @@
 // -----------------------------------------------------------------------------
 
 app-content {
-  @apply order-4 grow px-5 md:w-3/4 lg:w-5/6;
+  /* grow giúp nội dung chiếm trọn diện tích còn lại */
+  @apply block flex w-full grow flex-col;
 }

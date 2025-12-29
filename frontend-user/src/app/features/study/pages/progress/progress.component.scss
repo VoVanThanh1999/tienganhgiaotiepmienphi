@@ -1,0 +1,11 @@
+.card {
+  @apply rounded-2xl border bg-white p-6;
+}
+
+.lesson-card {
+  @apply rounded-xl border p-5;
+}
+
+.btn-primary {
+  @apply rounded-xl bg-green-700 px-6 py-3 text-sm text-white hover:bg-green-800;
+}

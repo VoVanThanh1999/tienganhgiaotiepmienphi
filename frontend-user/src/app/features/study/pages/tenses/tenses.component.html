@@ -1,0 +1,26 @@
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <h1>Các thì hay dùng trong giao tiếp</h1>
+    <p class="page-desc">
+      Bạn <strong>không cần học tất cả các thì</strong>. Chỉ cần nắm vững những thì dưới đây là bạn đã nói chuyện hằng
+      ngày rất ổn.
+    </p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="container">
+  <div class="tense-grid">
+    <div class="card" *ngFor="let item of tenses">
+      <span class="badge">{{ item.badge }}</span>
+      <h3>{{ item.title }}</h3>
+      <p class="use">{{ item.use }}</p>
+
+      <div class="example">
+        {{ item.example }}
+        <span>{{ item.meaning }}</span>
+      </div>
+    </div>
+  </div>
+</section>

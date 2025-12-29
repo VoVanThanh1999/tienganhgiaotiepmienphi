@@ -11,15 +11,26 @@ import { LANGUAGES } from '@core/constants/languages';
 import { environment } from '@env/environment';
 import { SharedModule } from '@shared/shared.module';
 
-import { ContentComponent, FooterComponent, HeaderComponent, NavbarComponent } from './components';
+import {
+  AdminFooterComponent,
+  AdminHeaderComponent,
+  AdminSidebarComponent,
+  ContentComponent,
+  FooterComponent,
+  HeaderComponent,
+  NavbarComponent
+} from './components';
 import { EnsureModuleLoadedOnce } from './guards';
 import { GlobalErrorHandler } from './handlers';
 import { HttpErrorInterceptor } from './interceptors';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AppInitializer } from './services';
 import { AppUpdater } from './services/app-updater.service';
 import { CustomPageTitleStrategy, CustomRouteReuseStrategy } from './strategies';
 import { CustomLazyLoadImageStrategy } from './strategies/custom-lazyload-image.strategy';
 import { APP_NAME } from './tokens/app-name';
+import { AdminNavbarComponent } from './components/admin/admin-navbar/admin-navbar.component';
 
 const SHARED_ITEMS: Type<any>[] = [FooterComponent, HeaderComponent, ContentComponent, NavbarComponent];
 
@@ -29,7 +40,19 @@ const availableLanguages = LANGUAGES.map(language => ({ id: language.id, label: 
 const languagesToLocales = Object.assign({}, ...LANGUAGES.map(language => ({ [language.id]: language.locale })));
 
 @NgModule({
-  declarations: [...SHARED_ITEMS],
+  declarations: [
+    // User Components
+    ...SHARED_ITEMS,
+    // Admin Components
+    AdminSidebarComponent,
+    AdminHeaderComponent,
+    AdminFooterComponent,
+    // Layouts
+    AdminLayoutComponent,
+    UserLayoutComponent,
+    NavbarComponent,
+    AdminNavbarComponent
+  ],
   imports: [
     // Angular modules
     CommonModule,
@@ -79,6 +102,10 @@ export class CoreModule extends EnsureModuleLoadedOnce {
           provide: HTTP_INTERCEPTORS,
           useClass: HttpErrorInterceptor,
           multi: true
+        },  
+        { provide: HTTP_INTERCEPTORS, 
+          useClass: HttpErrorInterceptor, 
+          multi: true 
         },
         {
           provide: TRANSLOCO_CONFIG,

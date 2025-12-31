@@ -55,8 +55,7 @@ public class JwtAuthenticationFilter implements WebFilter {
         Claims claims = jwtUtil.getClaims(token);
         String userId = claims.getSubject();
         String role = claims.get("role", String.class);
-        
-        // 4. Add hearder
+ 
         return chain.filter(
             exchange.mutate()
                 .request(

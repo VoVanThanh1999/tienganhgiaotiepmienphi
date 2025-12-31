@@ -1,0 +1,10 @@
+.main-content {
+    margin-left: 17.125rem; // = width sidebar (Material Dashboard)
+  }
+  
+  @media (max-width: 1199.98px) {
+    .main-content {
+      margin-left: 0;
+    }
+  }
+  

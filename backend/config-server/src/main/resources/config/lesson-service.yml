@@ -19,10 +19,12 @@ spring:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
       
 openai:
   api-key: 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

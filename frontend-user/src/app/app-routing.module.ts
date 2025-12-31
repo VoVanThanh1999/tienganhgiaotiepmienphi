@@ -3,6 +3,8 @@ import { RouterModule, Routes, UrlMatcher, UrlSegment } from '@angular/router';
 
 import { LANGUAGES } from './core/constants';
 import { localizeRoute } from './core/guards';
+import { AdminLayoutComponent } from './core/layouts/admin-layout/admin-layout.component';
+import { UserLayoutComponent } from './core/layouts/user-layout/user-layout.component';
 import { languageResolver } from './core/resolvers';
 import { CustomRoutePreloadingStrategy } from './core/strategies';
 import { ErrorComponent } from './shared/components';
@@ -21,7 +23,18 @@ const languageMatcher: UrlMatcher = (url: UrlSegment[]) => {
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   {
+    path: 'auth',
+    component: UserLayoutComponent,
+    loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'study',
+    component: UserLayoutComponent,
+    loadChildren: () => import('./features/study/study.module').then(m => m.StudyModule)
+  },
+  {
     path: 'welcome',
+    component: UserLayoutComponent,
     loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule),
     data: {
       meta: {
@@ -32,6 +45,7 @@ const routes: Routes = [
   },
   {
     path: 'jokes',
+    component: AdminLayoutComponent,
     loadChildren: () => import('./features/jokes/jokes.module').then(m => m.JokesModule),
     data: {
       preload: true,

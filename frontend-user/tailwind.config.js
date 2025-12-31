@@ -4,19 +4,30 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
   prefix: '',
   mode: 'jit',
-  content: ['./src/**/*.{html,ts,css,scss,sass,less,styl}'],
+  content: ['./src/**/*.{html,ts,css,scss,sass,less,style}'],
   darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Comic Neue', ...defaultTheme.fontFamily.sans]
+        sans: [
+          'system-ui', 
+          '-apple-system', 
+          'BlinkMacSystemFont', 
+          '"Segoe UI"', 
+          'Roboto', ...defaultTheme.fontFamily.sans]
       },
       backgroundImage: {
         waves: "url('/assets/images/background.svg')"
       },
       colors: {
         'transparent-gray-50': '#cdcdcd52',
-        'transparent-gray-100': '#cdcdcd99'
+        'transparent-gray-100': '#cdcdcd99',
+        'green-light': '#e8f5e9',
+        'green-strong': '#2e7d32',
+        'app-text': '#1f2937',
+        'app-muted': '#6b7280',
+        'app-border': '#e5e7eb',
+        '$shadow-dropdown': '0 30px 60px rgba(0, 0, 0, 0.08)',
       }
     }
   },

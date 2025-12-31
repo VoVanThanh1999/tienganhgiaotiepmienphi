@@ -1,0 +1,4 @@
+# Angular
+.angular/
+dist/
+node_modules/

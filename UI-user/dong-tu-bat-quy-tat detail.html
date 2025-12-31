@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Irregular Verb – Go</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --green:#2e7d32;
+  --bg:#f9fbf9;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --text:#1f2937;
+  --muted:#6b7280;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:24px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:24px;
+  margin-bottom:24px;
+  border:1px solid var(--border);
+}
+
+h1{
+  margin:0 0 8px;
+}
+
+.verb-box{
+  display:flex;
+  gap:24px;
+  margin-top:16px;
+}
+
+.verb{
+  font-size:18px;
+  font-weight:600;
+  color:var(--green);
+}
+
+/* CONTEXT */
+.context p{
+  margin:8px 0;
+}
+
+.example{
+  background:#f3f4f6;
+  padding:12px;
+  border-radius:10px;
+  margin-top:12px;
+  font-style:italic;
+}
+
+/* EXERCISE */
+.question{
+  margin-top:16px;
+}
+
+.options{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+
+.option{
+  padding:10px 16px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  cursor:pointer;
+  background:white;
+}
+
+.option:hover{
+  border-color:var(--green);
+  color:var(--green);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="card">
+    <h1>Irregular Verb: <span style="color:#2e7d32">go</span></h1>
+    <div class="verb-box">
+      <div class="verb">V1: go</div>
+      <div class="verb">V2: went</div>
+      <div class="verb">V3: gone</div>
+    </div>
+  </div>
+
+  <!-- CONTEXT -->
+  <div class="card context">
+    <h2>📌 Ngữ cảnh sử dụng</h2>
+    <p>
+      <strong>Go</strong> dùng để nói về việc di chuyển từ nơi này sang nơi khác.
+    </p>
+
+    <p>
+      👉 Dạng quá khứ <strong>went</strong> dùng khi hành động đã xảy ra.
+    </p>
+
+    <div class="example">
+      • I <strong>go</strong> to work every day.<br>
+      • Yesterday, I <strong>went</strong> to work late.<br>
+      • I have <strong>gone</strong> to the office already.
+    </div>
+  </div>
+
+  <!-- EXERCISE -->
+  <div class="card">
+    <h2>✏️ Bài tập luyện tập</h2>
+
+    <div class="question">
+      <p>
+        Yesterday, I ___ to school.
+      </p>
+
+      <div class="options">
+        <div class="option">go</div>
+        <div class="option">went</div>
+        <div class="option">gone</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>
+        I have ___ to the market already.
+      </p>
+
+      <div class="options">
+        <div class="option">go</div>
+        <div class="option">went</div>
+        <div class="option">gone</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

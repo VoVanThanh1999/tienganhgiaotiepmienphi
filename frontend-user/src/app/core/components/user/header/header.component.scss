@@ -1,0 +1,306 @@
+// Khai báo biến màu sắc (giống style cũ của bạn)
+$primary-green: #15803d; // green-700
+$primary-hover: #166534; // green-800
+$gray-light: #f3f4f6; // gray-100
+$gray-border: #e5e7eb; // gray-200
+$text-gray: #6b7280; // gray-500
+$text-dark: #374151; // gray-700
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: white;
+  border-bottom: 1px solid $gray-border;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+
+  .header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.25rem; // px-5
+    height: 4rem; // h-16
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; // QUAN TRỌNG: Để làm mốc căn giữa cho Nav
+  }
+}
+
+/* --- LEFT: LOGO --- */
+.header-left {
+  .logo {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: $primary-green;
+    text-decoration: none;
+  }
+}
+
+/* --- CENTER: NAV (CĂN GIỮA TUYỆT ĐỐI) --- */
+.header-center {
+  display: none; // Ẩn trên mobile
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); // Kỹ thuật căn giữa bất chấp chiều rộng 2 bên
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $text-gray;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $primary-green;
+    }
+  }
+}
+
+/* --- RIGHT: ACTIONS --- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: white;
+  z-index: 10;
+  margin-top: 0.5rem;
+}
+
+// Buttons (Login/Register)
+.btn {
+  padding: 0.5rem ;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &.btn-outline {
+    border: 1px solid $gray-border;
+    color: inherit;
+
+    &:hover {
+      background-color: $gray-light;
+    }
+  }
+
+  &.btn-primary {
+    background-color: $primary-green;
+    color: white;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+}
+
+// Icon Buttons (Github, Bell)
+.icon-btn {
+  padding: 0.5rem;
+  color: #4b5563;
+  border-radius: 9999px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &:hover {
+    background-color: $gray-light;
+  }
+
+  &.notification {
+    margin-right: 0.5rem;
+
+    .badge {
+      position: absolute;
+      top: 0.25rem;
+      right: 0.25rem;
+      background-color: #3b82f6; // blue-500
+      color: white;
+      font-size: 0.625rem;
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+    }
+  }
+}
+
+// User Menu Logic
+.user-menu-container {
+  position: relative; // Để dropdown định vị theo nút này
+
+  .user-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: $gray-light;
+    padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+    border-radius: 9999px;
+    border: 1px solid $gray-border;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      /* stylelint-disable-next-line scss/no-global-function-names */
+      background-color: darken($gray-light, 5%);
+    }
+
+    img {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    span {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $text-dark;
+      max-width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  // --- DROPDOWN STYLING ---
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.75rem;
+    width: 300px;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%);
+    border: 1px solid $gray-light;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease-out;
+
+    .dropdown-header {
+      padding: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+
+      .user-info {
+        display: flex;
+        gap: 0.75rem;
+
+        img {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          border: 1px solid $gray-border;
+        }
+
+        h4 {
+          margin: 0;
+          font-size: 0.875rem;
+          font-weight: 700;
+          color: #1f2937;
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.75rem;
+          color: #6b7280;
+        }
+      }
+    }
+
+    .dropdown-tabs {
+      display: flex;
+      padding: 0 1.25rem;
+      border-bottom: 1px solid $gray-border;
+
+      button {
+        flex: 1;
+        background: none;
+        border: none;
+        padding-bottom: 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        color: #9ca3af;
+        border-bottom: 2px solid transparent;
+
+        &.active {
+          color: #2563eb; // blue-600
+          border-bottom-color: #2563eb;
+        }
+
+        &:hover:not(.active) {
+          color: $text-dark;
+        }
+      }
+    }
+
+    .dropdown-list {
+      padding: 0.75rem;
+
+      a,
+      button.logout-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 0.625rem 0.75rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        color: $text-dark;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+        box-sizing: border-box;
+
+        &:hover {
+          background-color: $gray-light;
+        }
+
+        &.highlight {
+          background-color: $gray-light;
+          font-weight: 500;
+        }
+      }
+
+      .logout-btn:hover {
+        background-color: #fef2f2;
+        color: #dc2626;
+      }
+
+      .divider {
+        height: 1px;
+        background-color: $gray-light;
+        margin: 0.25rem 0;
+      }
+    }
+  }
+}
+
+/* stylelint-disable-next-line keyframes-name-pattern */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

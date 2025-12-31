@@ -1,0 +1,51 @@
+<section class="container py-16">
+  <h1>Danh sách bài học</h1>
+  <p class="desc">Các bài học được sắp xếp sẵn theo lộ trình. Mỗi bài ngắn, tập trung vào giao tiếp thực tế.</p>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button *ngFor="let tab of tabs" class="tab" [class.active]="activeTab === tab" (click)="activeTab = tab">
+      {{ tab }}
+    </button>
+  </div>
+
+  <!-- LESSON LIST -->
+  <div class="lesson-list">
+    <div *ngFor="let l of lessons" class="lesson-card">
+      <img [src]="l.img" />
+
+      <div class="lesson-content">
+        <div>
+          <div class="lesson-title">
+            {{ l.title }}
+            <span class="level-badge" [ngClass]="l.levelClass">
+              {{ l.level }}
+            </span>
+          </div>
+          <div class="lesson-meta">⏱ {{ l.time }} · Chủ đề: {{ l.topic }}</div>
+        </div>
+
+        <div class="lesson-tags">
+          <span *ngFor="let t of l.tags" class="tag">{{ t }}</span>
+        </div>
+
+        <div class="lesson-footer">
+          <span class="status" [class.done]="l.done">
+            {{ l.done ? 'Đã học' : 'Chưa học' }}
+          </span>
+
+          <button class="btn" [class.primary]="!l.done">
+            {{ l.done ? 'Xem lại' : 'Bắt đầu học' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <button class="page-btn">‹</button>
+    <button class="page-btn active">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">3</button>
+    <button class="page-btn">›</button>
+  </div>
+</section>

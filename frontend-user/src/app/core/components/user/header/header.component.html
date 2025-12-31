@@ -1,0 +1,77 @@
+<header class="app-header">
+  <div class="header-container">
+    <div class="header-left">
+      <a href="#" class="logo">English Hub</a>
+    </div>
+
+    <nav class="header-center">
+      <a href="#" class="nav-link">Trang chủ</a>
+      <a routerLink="/study/lessonlist" class="nav-link">Bài học</a>
+      <a routerLink="/study/progress" class="nav-link">Progress</a>
+      <a routerLink="/study/tense-detail" class="nav-link">tense-detail</a>
+      <a routerLink="/study/tenses" class="nav-link">tense</a>
+    </nav>
+
+    <div class="header-right">
+      <ng-template #guest>
+        <a routerLink="/auth/login" class="btn btn-outline">Đăng nhập</a>
+        <a routerLink="/auth/register" class="btn btn-primary">Đăng ký</a>
+        <button (click)="logout()" type="button" class="logout-btn">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Đăng xuất</span>
+        </button>
+      </ng-template>
+
+      <ng-container *ngIf="user$ | async as user; else guest">
+        <div 
+        
+         class="user-menu-container">
+          
+          <button class="user-btn" (click)="toggleDropdown()">
+            <img [src]="user.avatar" alt="Avatar" />
+            <span>{{ user.name }}</span>
+          </button>
+
+          <div class="dropdown-menu" *ngIf="isDropdownOpen">
+            <div class="dropdown-header">
+              <div class="user-info">
+                <img [src]="user.avatar" />
+                <div>
+                  <h4>JWT User</h4>
+                  <p>{{ user.role }}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown-tabs">
+              <button class="active">Profile</button>
+              <!-- <button>Setting</button> -->
+            </div>
+
+            <div class="dropdown-list">
+              <!-- Link thông thường -->
+              <a href="/profile">
+                <i class="fa-solid fa-user"></i>
+                <span>Trang cá nhân</span>
+              </a>
+
+              <a href="/settings" >
+                <i class="fa-solid fa-gear"></i>
+                <span>Cài đặt</span>
+              </a>
+
+              <!-- Đường kẻ ngăn cách -->
+              <div class="divider"></div>
+
+              <!-- Nút đăng xuất với hiệu ứng riêng -->
+              <button (click)="logout()" type="button" class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Đăng xuất</span>
+              </button>
+            </div>
+          </div>
+        </div></ng-container
+      >
+    </div>
+  </div>
+</header>

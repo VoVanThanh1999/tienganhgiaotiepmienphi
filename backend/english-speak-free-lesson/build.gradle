@@ -37,6 +37,7 @@ dependencies {
 	implementation 'com.vladmihalcea:hibernate-types-60:2.21.1'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation("com.openai:openai-java:4.13.0")
+
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Danh sách bài nghe – English Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --green:#2e7d32;
+  --bg:#f9fbf9;
+  --border:#e5e7eb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+body{margin:0;background:var(--bg);color:var(--text)}
+.container{max-width:900px;margin:auto;padding:24px}
+h1{margin:0;font-size:28px}
+.sub{margin-top:6px;color:var(--muted)}
+
+/* FILTER */
+.filter{
+  margin:20px 0;
+}
+select{
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:white;
+}
+
+/* LIST */
+.list{
+  margin-top:20px;
+}
+.item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px 22px;
+  margin-bottom:14px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 24px rgba(0,0,0,.06);
+}
+
+.left{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.play{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#e8f5e9;
+  color:var(--green);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+.title{
+  font-weight:600;
+}
+.meta{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.badge{
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+}
+.done{
+  background:#e8f5e9;
+  color:var(--green);
+}
+.new{
+  background:#f3f4f6;
+  color:#374151;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <h1>Danh sách bài nghe</h1>
+  <p class="sub">
+    Chủ đề: Hội thoại giao tiếp đời sống
+  </p>
+
+  <!-- FILTER -->
+  <div class="filter">
+    <select>
+      <option>Tất cả level</option>
+      <option>Beginner</option>
+      <option>Intermediate</option>
+    </select>
+  </div>
+
+  <!-- LIST -->
+  <div class="list">
+
+    <div class="item">
+      <div class="left">
+        <div class="play">▶</div>
+        <div>
+          <div class="title">Chào hỏi nơi làm việc</div>
+          <div class="meta">⏱ 45 giây · Beginner</div>
+        </div>
+      </div>
+      <span class="badge new">Chưa học</span>
+    </div>
+
+    <div class="item">
+      <div class="left">
+        <div class="play">▶</div>
+        <div>
+          <div class="title">Hỏi thăm đồng nghiệp</div>
+          <div class="meta">⏱ 60 giây · Beginner</div>
+        </div>
+      </div>
+      <span class="badge done">Đã học</span>
+    </div>
+
+    <div class="item">
+      <div class="left">
+        <div class="play">▶</div>
+        <div>
+          <div class="title">Chuẩn bị cho cuộc họp</div>
+          <div class="meta">⏱ 75 giây · Intermediate</div>
+        </div>
+      </div>
+      <span class="badge new">Chưa học</span>
+    </div>
+
+    <div class="item">
+      <div class="left">
+        <div class="play">▶</div>
+        <div>
+          <div class="title">Phản hồi công việc</div>
+          <div class="meta">⏱ 90 giây · Intermediate</div>
+        </div>
+      </div>
+      <span class="badge new">Chưa học</span>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

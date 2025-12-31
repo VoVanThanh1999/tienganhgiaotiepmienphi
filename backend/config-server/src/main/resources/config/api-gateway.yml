@@ -9,6 +9,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/english_learning
     username: postgres
     password: 1234
+ 
 
   jpa:
     hibernate:
@@ -31,11 +32,11 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
-       
         - id: lesson-service
           uri: lb://lesson-service
           predicates:
             - Path=/lessons/**
+ 
 
 logging:
   level:

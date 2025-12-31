@@ -1,0 +1,70 @@
+<section class="register-wrap">
+  <div class="register-box">
+    <!-- FORM -->
+    <div class="register-form">
+      <h1>{{ page.title }}</h1>
+      <p class="register-desc">{{ page.description }}</p>
+
+      <form [formGroup]="form" (ngSubmit)="register()">
+        <div class="form-group">
+          <label>Họ và tên</label>
+          <input type="text" placeholder="Nguyễn Văn A" formControlName="fullName"  />
+          <div *ngIf="form.get('fullName')?.touched && form.get('fullName')?.invalid">
+            Full name is required
+          </div>          
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" formControlName="email"  />
+          <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+            Full name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" placeholder="••••••••" type="password" formControlName="password" placeholder="Password" />
+        </div>
+
+        <div class="form-group">
+          <label>Xác nhận mật khẩu</label>
+          <input type="password" placeholder="••••••••" type="password" formControlName="confirmPassword" placeholder="confirmPassword" />
+          <div *ngIf="  form.errors?.['passwordMismatch'] &&
+    form.get('confirmPassword')?.touched ">
+            Mật khẩu không khớp
+          </div>
+        </div>
+
+        <div class="policy">
+          <label>
+            <input type="checkbox" formControlName="agree" />
+            Tôi đồng ý với <a href="#">Điều khoản</a> và
+            <a href="#">Chính sách</a>
+          </label>
+          <div *ngIf="form.get('agree')?.touched && form.get('agree')?.invalid">
+            Bạn phải đồng ý điều khoản
+          </div>
+        </div>
+
+        <button class="btn" type="submit">Đăng ký miễn phí</button>
+      </form>
+
+      <div class="login-link">
+        Đã có tài khoản?
+        <a routerLink="/auth/login">Đăng nhập</a>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="register-image">
+      <img [src]="page.image.url" />
+      <div class="image-overlay">
+        <div>
+          <h2>{{ page.image.title }}</h2>
+          <p [innerHTML]="page.image.desc.replace('\n', '<br>')"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

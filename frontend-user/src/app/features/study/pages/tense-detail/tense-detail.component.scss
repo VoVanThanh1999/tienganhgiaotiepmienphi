@@ -1,0 +1,98 @@
+$green: #e8f5e9;
+$green-strong: #2e7d32;
+$text: #1f2937;
+$muted: #6b7280;
+$border: #e5e7eb;
+
+.container {
+  @apply mx-auto max-w-[1100px] px-5;
+}
+
+/* PAGE HEADER */
+.page-header {
+  background: $green;
+  padding: 60px 0;
+}
+
+.badge {
+  background: white;
+  color: $green-strong;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.page-desc {
+  margin-top: 12px;
+  max-width: 700px;
+  color: #374151;
+}
+
+/* CONTENT */
+section {
+  margin-top: 10px;
+}
+
+section h2,
+h1 {
+  font-weight: bold;
+}
+
+.card {
+  background: white;
+  border: 1px solid $border;
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.structure {
+  background: #f1f8f3;
+  border-left: 4px solid $green-strong;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-family: monospace;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.example {
+  margin-top: 16px;
+  padding-left: 14px;
+  border-left: 3px solid $green-strong;
+
+  span {
+    display: block;
+    margin-top: 6px;
+    color: $muted;
+  }
+}
+
+.mistake {
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+.cta {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: $green-strong;
+  color: white;
+  border: none;
+  font-size: 15px;
+
+  &.secondary {
+    background: white;
+    color: $green-strong;
+    border: 1px solid $green-strong;
+    margin-left: 12px;
+  }
+}

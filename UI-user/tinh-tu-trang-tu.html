@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Tính từ & Trạng từ – English Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --green:#2e7d32;
+  --bg:#f9fbf9;
+  --border:#e5e7eb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:24px;
+}
+
+h1{
+  margin:0;
+  font-size:28px;
+}
+.sub{
+  margin-top:6px;
+  color:var(--muted);
+}
+
+/* FILTER */
+.filter{
+  display:flex;
+  gap:12px;
+  margin:24px 0;
+}
+select{
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:white;
+}
+
+/* TABLE */
+.table-wrap{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th, td{
+  padding:14px 16px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  font-size:14px;
+}
+
+th{
+  background:#f3f4f6;
+  font-weight:600;
+}
+
+tr:hover{
+  background:#f9fafb;
+}
+
+.word{
+  font-weight:600;
+  color:var(--green);
+}
+
+.example{
+  color:var(--muted);
+  font-style:italic;
+}
+
+/* PAGINATION */
+.pagination{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:24px;
+}
+
+.page-btn{
+  padding:8px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:white;
+  cursor:pointer;
+}
+
+.page-btn.active{
+  background:var(--green);
+  color:white;
+  border-color:var(--green);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <h1>Tính từ & Trạng từ</h1>
+  <p class="sub">
+    Danh sách các cặp tính từ – trạng từ thường gặp trong giao tiếp.
+  </p>
+
+  <!-- FILTER -->
+  <div class="filter">
+    <select>
+      <option>Tất cả</option>
+      <option>Chỉ tính từ</option>
+      <option>Chỉ trạng từ</option>
+    </select>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Tính từ (Adjective)</th>
+          <th>Trạng từ (Adverb)</th>
+          <th>Ví dụ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="word">quick</td>
+          <td>quickly</td>
+          <td class="example">He is quick. / He runs quickly.</td>
+        </tr>
+        <tr>
+          <td class="word">happy</td>
+          <td>happily</td>
+          <td class="example">She is happy. / She speaks happily.</td>
+        </tr>
+        <tr>
+          <td class="word">careful</td>
+          <td>carefully</td>
+          <td class="example">Be careful. / Drive carefully.</td>
+        </tr>
+        <tr>
+          <td class="word">good</td>
+          <td>well</td>
+          <td class="example">She is good at math. / She speaks English well.</td>
+        </tr>
+        <tr>
+          <td class="word">fast</td>
+          <td>fast</td>
+          <td class="example">A fast car. / He drives fast.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="pagination">
+    <div class="page-btn">←</div>
+    <div class="page-btn active">1</div>
+    <div class="page-btn">2</div>
+    <div class="page-btn">3</div>
+    <div class="page-btn">→</div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* ===== VARIABLES ===== */
+$green: #e8f5e9;
+$green-strong: #2e7d32;
+$muted: #6b7280;
+$border: #e5e7eb;
+
+/* ===== BASE ===== */
+.container {
+  @apply mx-auto max-w-[1100px] px-5;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  background: $green;
+  padding: 60px 0;
+
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+  }
+}
+
+.page-desc {
+  margin-top: 10px;
+  max-width: 700px;
+  color: #374151;
+}
+
+/* ===== GRID ===== */
+.tense-grid {
+  margin-top: 40px;
+  display: grid;
+  gap: 24px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  border: 1px solid $border;
+  border-radius: 20px;
+  padding: 26px;
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgb(0 0 0 / 8%);
+  }
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: $green;
+  color: $green-strong;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+h3 {
+  margin: 6px 0 10px;
+  font-size: 18px;
+}
+
+.use {
+  font-size: 14px;
+  color: $muted;
+}
+
+.example {
+  margin-top: 14px;
+  padding-left: 14px;
+  border-left: 3px solid $green-strong;
+  font-size: 14px;
+
+  span {
+    display: block;
+    color: $muted;
+    margin-top: 6px;
+  }
+}

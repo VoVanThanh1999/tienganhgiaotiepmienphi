@@ -21,6 +21,8 @@ public class User {
     @Column(unique = true)
     private String email;
 
+    private String fullName;
+
     private String password;
 
     private String role; // USER / ADMIN

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Irregular Verbs – English Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --green:#2e7d32;
+  --bg:#f9fbf9;
+  --border:#e5e7eb;
+  --text:#1f2937;
+  --muted:#6b7280;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:24px;
+}
+
+h1{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.sub{
+  color:var(--muted);
+  margin-bottom:24px;
+}
+
+/* FILTER */
+.filter{
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
+}
+select{
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid var(--border);
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 20px rgba(0,0,0,.05);
+}
+
+th, td{
+  padding:14px 12px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  font-size:14px;
+}
+
+th{
+  background:#f3f4f6;
+  font-weight:600;
+}
+
+tr:hover{
+  background:#f9fafb;
+}
+
+.verb{
+  font-weight:600;
+  color:var(--green);
+}
+
+/* PAGINATION */
+.pagination{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:24px;
+}
+
+.page-btn{
+  padding:8px 14px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:white;
+  cursor:pointer;
+}
+
+.page-btn.active{
+  background:var(--green);
+  color:white;
+  border-color:var(--green);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Động từ bất quy tắc</h1>
+  <p class="sub">
+    Học V1 – V2 – V3 theo ngữ cảnh, không học vẹt.
+  </p>
+
+  <!-- FILTER -->
+  <div class="filter">
+    <select>
+      <option>All levels</option>
+      <option>BEGINNER</option>
+      <option>INTERMEDIATE</option>
+    </select>
+  </div>
+
+  <!-- TABLE -->
+  <table>
+    <thead>
+      <tr>
+        <th>Base (V1)</th>
+        <th>Past (V2)</th>
+        <th>PP (V3)</th>
+        <th>Nghĩa</th>
+        <th>Ví dụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="verb">go</td>
+        <td>went</td>
+        <td>gone</td>
+        <td>đi</td>
+        <td>I go to work every day.</td>
+      </tr>
+      <tr>
+        <td class="verb">see</td>
+        <td>saw</td>
+        <td>seen</td>
+        <td>nhìn thấy</td>
+        <td>I saw her yesterday.</td>
+      </tr>
+      <tr>
+        <td class="verb">take</td>
+        <td>took</td>
+        <td>taken</td>
+        <td>lấy / mang</td>
+        <td>I took a photo.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PAGINATION -->
+  <div class="pagination">
+    <div class="page-btn">←</div>
+    <div class="page-btn active">1</div>
+    <div class="page-btn">2</div>
+    <div class="page-btn">3</div>
+    <div class="page-btn">→</div>
+  </div>
+</div>
+
+</body>
+</html>

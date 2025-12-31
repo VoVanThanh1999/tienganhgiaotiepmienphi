@@ -18,7 +18,7 @@ public class AIGptService {
 		StringBuilder rs = new StringBuilder();
 		
 		OpenAIClient client = OpenAIOkHttpClient.builder()
-			    .apiKey("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")
+			    .apiKey("###")
 			    .build();
 		
 		ResponseCreateParams params = ResponseCreateParams.builder()

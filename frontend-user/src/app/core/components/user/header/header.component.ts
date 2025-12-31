@@ -15,7 +15,6 @@ import { Observable } from "rxjs";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent {
-  isLoggedIn = false; // Mặc định là chưa đăng nhập
 
   isDropdownOpen = false; // Trạng thái ẩn/hiện menu profile
 
@@ -45,25 +44,8 @@ export class HeaderComponent {
 
 
   ngOnInit() {
-    // Kiểm tra token trong localStorage để cập nhật trạng thái
-    this.isLoggedIn = !!localStorage.getItem("access_token");
-    // this.isLoggedIn = true;
     this.user$ = this.authState.user$;
-
     console.log("this.user$",this.user$)
-  }
-
-  mapRole(role: string): string {
-    switch (role) {
-      case "ADMIN":
-        return "Administrator";
-      case "USER":
-        return "User";
-      case "DESIGNER":
-        return "UI/UX Designer";
-      default:
-        return role;
-    }
   }
 
   toggleDropdown() {
@@ -72,7 +54,6 @@ export class HeaderComponent {
 
   logout() {
     this.authService.logout();
-    this.isLoggedIn = false;
     window.location.reload(); // Hoặc điều hướng về trang chủ
   }
 

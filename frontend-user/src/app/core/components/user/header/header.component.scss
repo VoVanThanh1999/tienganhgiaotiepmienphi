@@ -69,13 +69,14 @@ $text-dark: #374151; // gray-700
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: white; // Tránh bị nav đè lên nếu màn hình quá nhỏ
+  background-color: white;
   z-index: 10;
+  margin-top: 0.5rem;
 }
 
 // Buttons (Login/Register)
 .btn {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem ;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   text-decoration: none;

@@ -1,47 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthService } from '@app/core/guards/auth.guard';
-import { AuthStateService } from '@app/core/guards/AuthStateService';
-import { TokenService } from '@app/core/services/auth.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { AuthService } from "@app/core/guards/auth.guard";
+import { AuthStateService } from "@app/core/guards/AuthStateService";
+import { TokenService } from "@app/core/services/auth.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+  loginForm: FormGroup;
 
   isLoading = false;
 
-  constructor(private fb: FormBuilder, 
+  constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
     private tokenService: TokenService,
     private authState: AuthStateService,
-    private router: Router) {}
-
-  ngOnInit(): void {
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      rememberMe: [false]
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, Validators.minLength(6)]],
+      rememberMe: [false],
     });
   }
 
+  ngOnInit(): void {}
+
   onSubmit(): void {
+    console.log("Dữ liệu đăng nhập sai:");
+
     if (this.loginForm.valid) {
       this.isLoading = true;
-      console.log('Dữ liệu đăng nhập:', this.loginForm.value);
+      console.log("Dữ liệu đăng nhập:", this.loginForm.value);
 
-      this.authService.login(this.loginForm.value as any).subscribe(res => {
+      this.authService.login(this.loginForm.value as any).subscribe((res) => {
         this.tokenService.setAccessToken(res.accessToken);
         this.tokenService.setRefreshToken(res.refreshToken);
         this.isLoading = false;
         this.authState.setUserFromToken(); // KÍCH HOẠT HEADER
-        this.router.navigate(['/']);
+        this.router.navigate(["/"]);
       });
     } else {
+      console.log("Dữ liệu đăng nhập sai:", this.loginForm.value);
+
       this.loginForm.markAllAsTouched();
     }
   }

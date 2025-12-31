@@ -33,8 +33,21 @@ export class AuthStateService {
   private mapJwtToUi(jwt: any): UiUser {
     return {
       name: jwt.fullName,
-      role: jwt.role,
+      role: this.mapRole(jwt.role),
       avatar: 'assets/images/avatar.png'
     };
+  }
+
+  mapRole(role: string): string {
+    switch (role) {
+      case "ADMIN":
+        return "Administrator";
+      case "USER":
+        return "User";
+      case "DESIGNER":
+        return "UI/UX Designer";
+      default:
+        return role;
+    }
   }
 }

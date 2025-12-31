@@ -6,20 +6,25 @@
 
     <nav class="header-center">
       <a href="#" class="nav-link">Trang chủ</a>
-      <a href="#" class="nav-link">Bài học</a>
-      <a href="#" class="nav-link">Luyện nói</a>
-      <a href="#" class="nav-link">Blog</a>
+      <a routerLink="/study/lessonlist" class="nav-link">Bài học</a>
+      <a routerLink="/study/progress" class="nav-link">Progress</a>
+      <a routerLink="/study/tense-detail" class="nav-link">tense-detail</a>
+      <a routerLink="/study/tenses" class="nav-link">tense</a>
     </nav>
 
     <div class="header-right">
-      <ng-container *ngIf="!isLoggedIn">
+      <ng-template #guest>
         <a routerLink="/auth/login" class="btn btn-outline">Đăng nhập</a>
-        <a href="#" class="btn btn-primary">Học miễn phí</a>
-      </ng-container>
+        <a routerLink="/auth/register" class="btn btn-primary">Đăng ký</a>
+        <button (click)="logout()" type="button" class="logout-btn">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Đăng xuất</span>
+        </button>
+      </ng-template>
 
-      <ng-container *ngIf="isLoggedIn">
+      <ng-container *ngIf="user$ | async as user; else guest">
         <div 
-        *ngIf="user$ | async as user"
+        
          class="user-menu-container">
           
           <button class="user-btn" (click)="toggleDropdown()">

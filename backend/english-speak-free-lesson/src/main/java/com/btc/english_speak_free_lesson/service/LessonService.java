@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 import com.btc.english_speak_free_lesson.dto.LessonCreateRequest;
 import com.btc.english_speak_free_lesson.dto.LessonResponse;
 import com.btc.english_speak_free_lesson.dto.base.PageResponse;
+import com.btc.english_speak_free_lesson.model.Lesson;
 import com.btc.english_speak_free_lesson.model.LessonContent;
-import com.btc.english_speak_free_lesson.model.data.Lesson;
 import com.btc.english_speak_free_lesson.repository.LessonContentRepository;
 import com.btc.english_speak_free_lesson.repository.LessonRepository;
 

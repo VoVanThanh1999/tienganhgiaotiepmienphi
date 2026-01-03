@@ -9,8 +9,7 @@ import com.btc.english_speak_free_lesson.model.data.PracticeType;
 
 @Entity
 @Table(name = "lesson_practice_submissions")
-@Getter
-@Setter
+@Getter @Setter
 public class LessonPracticeSubmission {
 
     @Id

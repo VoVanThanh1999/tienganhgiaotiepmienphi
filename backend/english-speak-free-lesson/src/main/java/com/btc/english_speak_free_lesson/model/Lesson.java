@@ -1,4 +1,4 @@
-package com.btc.english_speak_free_lesson.model.data;
+package com.btc.english_speak_free_lesson.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

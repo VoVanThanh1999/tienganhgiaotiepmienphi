@@ -1,6 +1,8 @@
 package com.btc.english_speak_free_lesson.model;
 
 import org.hibernate.annotations.Type;
+
+import com.btc.english_speak_free_lesson.model.data.LessonOverview;
 import com.vladmihalcea.hibernate.type.json.JsonType;
 
 import jakarta.persistence.Column;

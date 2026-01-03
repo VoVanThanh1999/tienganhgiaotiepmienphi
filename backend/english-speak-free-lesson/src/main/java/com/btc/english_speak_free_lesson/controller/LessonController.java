@@ -29,7 +29,7 @@ public class LessonController {
 	}
 
 	@GetMapping("/{code}")
-	public LessonResponse getLessonDetail(@PathVariable String code) {
+	public LessonResponse getLessonDetail(@PathVariable(name = "code") String code) {
 		return lessonService.getByCode(code);
 	}
 	
@@ -38,8 +38,8 @@ public class LessonController {
 		return lessonService.create(request);
 	}
 	
-	@DeleteMapping("/del/{id}")
-	public void deleteById(@PathVariable Long id) {
+	@DeleteMapping("/{id}")
+	public void deleteById(@PathVariable(name ="id") Long id) {
 		lessonService.delete(id);
 	}
 	

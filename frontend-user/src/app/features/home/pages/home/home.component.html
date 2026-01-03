@@ -4,26 +4,63 @@
     <div>
       <h1>Học tiếng Anh miễn phí.</h1>
 
+      <p class="hero-main mt-5">
+        <strong>
+          Lộ trình này đã được thiết kế để bạn vẫn giao tiếp giỏi được, kể cả
+          khi bạn rất bận.
+        </strong>
+      </p>
       <p class="hero-main">
-        <strong> Lộ trình giúp bạn giao tiếp giỏi dù rất bận. </strong>
+        Bạn học để nói được điều mình nghĩ, trong đời sống và công việc — không
+        học cho có.
+      </p>
+      <p class="hero-sub">
+        Mỗi ngày chỉ một bài ngắn. Có luyện nghe, rèn ngữ pháp. Có
+        <strong>AI sửa phát âm</strong> và rèn phản xạ nói.
       </p>
 
-      <p class="hero-sub">Mỗi ngày một bài ngắn · Có nghe · Có ngữ pháp · Có AI sửa phát âm</p>
-
+      <p class="hero-strong">
+        Toàn bộ nội dung miễn phí. Không cần ra trung tâm. Nội dung được thiết
+        kế bởi chuyên gia nhiều năm kinh nghiệm.
+      </p>
       <div class="hero-actions">
-        <button class="btn primary">Học ngay – miễn phí</button>
-        <button class="btn">Xem lộ trình</button>
+        <button
+        [routerLink]="['/study/lessonlist']"
+        class="btn primary">Xem lộ trình</button>
       </div>
     </div>
 
-    <img src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8" alt="English Hub" />
+    <img class="w-full rounded-[26px] shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
+      src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8"
+      alt="English Hub"
+    />
+  </div>
+</section>
+
+<!-- KNOWLEDGE -->
+<section class="section container">
+  <h2>Nội dung học phổ biến</h2>
+  <p class="desc">Tất cả kiến thức nền tảng để giao tiếp tốt.</p>
+
+  <div class="grid-knowledge grid-layout">
+    <div
+      class="knowledge-card"
+      *ngFor="let k of knowledgeList"
+      [routerLink]="['/study/', k.link]"
+    >
+      <h3>{{ k.icon }} {{ k.title }}</h3>
+      <p>{{ k.desc }}</p>
+      <span>{{ k.link }}</span>
+    </div>
   </div>
 </section>
 
 <!-- WHY -->
 <section class="section container">
   <h2>Vì sao học ở đây vẫn giao tiếp giỏi được?</h2>
-  <p class="desc">Không dạy nói cho hay — mà giúp bạn nói được và dùng được thật.</p>
+  <p class="desc">
+    Không dạy nói cho hay — mà giúp bạn nói được và dùng được thật.
+  </p>
 
   <div class="grid-why grid-layout">
     <div class="card" *ngFor="let f of features">
@@ -43,20 +80,6 @@
       <h3>{{ lv.title }}</h3>
       <p>{{ lv.subtitle }}</p>
       <span>{{ lv.result }}</span>
-    </div>
-  </div>
-</section>
-
-<!-- KNOWLEDGE -->
-<section class="section container">
-  <h2>Nội dung học phổ biến</h2>
-  <p class="desc">Tất cả kiến thức nền tảng để giao tiếp tốt.</p>
-
-  <div class="grid-knowledge grid-layout">
-    <div class="knowledge-card" *ngFor="let k of knowledgeList">
-      <h3>{{ k.icon }} {{ k.title }}</h3>
-      <p>{{ k.desc }}</p>
-      <span>{{ k.link }}</span>
     </div>
   </div>
 </section>

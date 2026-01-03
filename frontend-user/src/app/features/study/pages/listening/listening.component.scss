@@ -1,0 +1,70 @@
+.listening-page {
+    @apply bg-gray-50 min-h-screen;
+  }
+  
+  .container {
+    @apply max-w-[1100px] mx-auto px-6 py-6;
+  }
+  
+  h1 {
+    @apply text-3xl font-bold;
+  }
+  
+  .sub {
+    @apply mt-2 text-gray-500;
+  }
+  
+  /* TODAY */
+  .today-card {
+    @apply mt-6 bg-white border border-gray-200 rounded-2xl p-6;
+  }
+  
+  h2 {
+    @apply text-xl font-semibold mt-2;
+  }
+  
+  /* GRID (đổi tên để tránh lỗi @apply grid) */
+  .card-grid {
+    @apply mt-8 gap-6;
+    display: grid;
+    grid-template-columns: 1fr;
+  
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* CARD */
+  .category-card {
+    @apply bg-white border border-gray-200 rounded-2xl p-6
+           transition hover:-translate-y-1
+           hover:shadow-[0_14px_30px_rgba(0,0,0,0.08)];
+  }
+  
+  /* BADGE */
+  .badge {
+    @apply inline-block mb-2 px-3 py-1 rounded-full
+           text-sm font-medium
+           bg-green-100 text-[#2e7d32];
+  }
+  
+  /* BUTTON */
+  .btn-primary {
+    @apply inline-block mt-4 px-5 py-2 rounded-xl
+           bg-[#2e7d32] text-white text-sm font-semibold
+           hover:bg-[#1b5e20];
+  }
+  
+  /* PROGRESS */
+  .progress {
+    @apply mt-3 h-2 rounded-lg bg-gray-200 overflow-hidden;
+  
+    span {
+      @apply block h-full bg-[#2e7d32];
+    }
+  }
+  
+  .progress-text {
+    @apply mt-2 text-sm text-gray-500;
+  }
+  

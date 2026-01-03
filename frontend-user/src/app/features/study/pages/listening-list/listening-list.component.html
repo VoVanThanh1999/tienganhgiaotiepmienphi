@@ -1,0 +1,44 @@
+<div class="listening-page">
+    <!-- HEADER -->
+    <h1>Danh sách bài nghe</h1>
+    <p class="sub">
+      Chủ đề: Hội thoại giao tiếp đời sống
+    </p>
+  
+    <!-- FILTER -->
+    <div class="filter">
+      <select [(ngModel)]="levelFilter">
+        <option value="ALL">Tất cả level</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+      </select>
+    </div>
+  
+    <!-- LIST -->
+    <div class="list">
+      <div
+        class="item"
+        *ngFor="let item of filteredItems"
+        (click)="goToDetail(item)"
+      >
+        <div class="left">
+          <div class="play">▶</div>
+  
+          <div>
+            <div class="title">{{ item.title }}</div>
+            <div class="meta">
+              ⏱ {{ item.duration }} giây · {{ item.level }}
+            </div>
+          </div>
+        </div>
+  
+        <span
+          class="badge"
+          [ngClass]="item.status"
+        >
+          {{ item.status === 'done' ? 'Đã học' : 'Chưa học' }}
+        </span>
+      </div>
+    </div>
+  </div>
+  

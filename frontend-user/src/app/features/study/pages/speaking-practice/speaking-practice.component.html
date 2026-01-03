@@ -1,0 +1,54 @@
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="card">
+      <h1 class="title">Luyện nói & phản xạ</h1>
+  
+      <span class="badge">
+        {{ lesson.level }} · {{ lesson.duration }}
+      </span>
+  
+      <p class="sub">
+        Chủ đề: {{ lesson.topic }}
+      </p>
+    </div>
+  
+    <!-- PROMPT -->
+    <div class="card">
+      <p class="prompt">
+        {{ lesson.prompt }}
+      </p>
+  
+      <button class="btn" (click)="toggleSample()">
+        {{ showSample ? 'Ẩn câu mẫu' : 'Xem câu mẫu' }}
+      </button>
+  
+      <div *ngIf="showSample" class="sample">
+        {{ lesson.sample }}
+      </div>
+    </div>
+  
+    <!-- RECORD -->
+    <div class="card">
+      <h2 class="section-title">🎙 Ghi âm</h2>
+  
+      <div class="record-box">
+        <button
+          class="record-btn"
+          [class.recording]="recording"
+          (click)="toggleRecord()"
+        >
+          🎤
+        </button>
+  
+        <div class="timer">{{ time }}</div>
+      </div>
+  
+      <div class="actions">
+        <button class="btn">Nghe lại</button>
+        <button class="btn primary">Gửi bài</button>
+      </div>
+    </div>
+  
+  </div>
+  

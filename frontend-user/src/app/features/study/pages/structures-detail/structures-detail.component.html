@@ -1,0 +1,42 @@
+<div class="container" *ngIf="lesson">
+    <!-- INTRO -->
+    <div class="card">
+      <h1>{{ lesson.title }}</h1>
+      <p>{{ lesson.intro }}</p>
+    </div>
+  
+    <!-- TOO -->
+    <div class="card" *ngIf="lesson.too">
+      <h2>🔹 Too</h2>
+  
+      <div class="formula">
+        too + adjective / adverb + to V
+      </div>
+  
+      <div class="example" *ngFor="let ex of lesson.too">
+        {{ ex.en }} <br />
+        → {{ ex.vi }}
+      </div>
+    </div>
+  
+    <!-- ENOUGH -->
+    <div class="card" *ngIf="lesson.enough">
+      <h2>🔹 Enough</h2>
+  
+      <div class="formula">
+        adjective / adverb + enough + to V
+      </div>
+  
+      <div class="example" *ngFor="let ex of lesson.enough">
+        {{ ex.en }} <br />
+        → {{ ex.vi }}
+      </div>
+    </div>
+  
+    <!-- NOTE -->
+    <div class="card" *ngIf="lesson.note">
+      <h2>⚠️ Ghi chú</h2>
+      <p class="note">{{ lesson.note }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,54 @@
+.container {
+  @apply mx-auto max-w-[900px] p-6;
+}
+
+.card {
+  @apply mb-6 rounded-2xl border border-gray-200 bg-white p-6;
+}
+
+h1 {
+  @apply mb-2 text-2xl font-bold;
+}
+
+.text-green {
+  @apply text-[#2e7d32];
+}
+
+.verb-box {
+  @apply mt-4 flex gap-6;
+}
+
+.verb {
+  @apply font-semibold text-[#2e7d32];
+}
+
+/* CONTEXT */
+.context p {
+  @apply mt-2;
+}
+
+.example {
+  @apply mt-4 rounded-xl bg-gray-100 p-4 italic;
+}
+
+/* EXERCISE */
+.question {
+  @apply mt-6;
+}
+
+.options {
+  @apply mt-3 flex flex-wrap gap-3;
+}
+
+.option {
+  @apply cursor-pointer rounded-xl border border-gray-300 bg-white px-4
+           py-2 transition;
+}
+
+.option:hover {
+  @apply border-[#2e7d32] text-[#2e7d32];
+}
+
+.option.active {
+  @apply border-[#2e7d32] bg-[#2e7d32] text-white;
+}

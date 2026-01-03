@@ -1,0 +1,56 @@
+.container {
+    @apply max-w-[920px] mx-auto px-5;
+  }
+  
+  .header {
+    @apply bg-white border-b border-gray-200 sticky top-0 z-10;
+  }
+  
+  .menu {
+    @apply h-16 flex items-center justify-between;
+  }
+  
+  .logo {
+    @apply font-bold text-green-700;
+  }
+  
+  .hero {
+    @apply relative h-[300px] bg-cover bg-center;
+  }
+  
+  .hero-overlay {
+    @apply absolute inset-0 bg-black/60 flex items-end;
+  }
+  
+  .hero-badge {
+    @apply inline-block px-4 py-1 rounded-full bg-white/80 text-green-700 text-sm font-semibold;
+  }
+  
+  .section {
+    @apply py-14;
+  }
+  
+  .block {
+    @apply bg-white border border-gray-200 rounded-2xl p-7 mb-7;
+  }
+  
+  .video-grid {
+    @apply grid gap-5 md:grid-cols-2;
+  }
+  
+  .video-card {
+    @apply border border-gray-200 rounded-xl overflow-hidden;
+  }
+  
+  .note-toggle {
+    @apply fixed right-6 bottom-6 w-14 h-14 rounded-full bg-yellow-100 border border-yellow-400 shadow-lg text-xl;
+  }
+  
+  .note-panel {
+    @apply fixed right-6 bottom-24 w-72 bg-yellow-100 border border-yellow-400 rounded-xl shadow-xl;
+  }
+  
+  .footer {
+    @apply border-t border-gray-200 py-6 text-center text-sm text-gray-500;
+  }
+  

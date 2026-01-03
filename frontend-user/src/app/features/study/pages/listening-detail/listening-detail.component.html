@@ -1,0 +1,54 @@
+<div class="listening-container">
+
+    <!-- HEADER -->
+    <div class="card">
+      <h1>{{ lesson.title }}</h1>
+      <span class="badge">{{ lesson.level }} · {{ lesson.duration }}</span>
+      <p class="sub">Chủ đề: {{ lesson.topic }}</p>
+    </div>
+  
+    <!-- AUDIO -->
+    <div class="card">
+      <h2>🎧 Nghe hội thoại</h2>
+      <div class="audio">
+        <button class="btn-primary">▶ Play</button>
+        <button class="btn">🐢 Slow</button>
+      </div>
+      <p class="sub">Nghe 1–2 lần trước khi xem transcript.</p>
+    </div>
+  
+    <!-- TRANSCRIPT -->
+    <div class="card">
+      <h2>📄 Transcript</h2>
+      <button class="btn" (click)="toggleTranscript()">
+        Hiện / Ẩn transcript
+      </button>
+  
+      <div class="transcript" *ngIf="showTranscript">
+        <p *ngFor="let line of lesson.transcript">
+          <strong>{{ line.speaker }}:</strong> {{ line.text }}
+        </p>
+      </div>
+    </div>
+  
+    <!-- QUESTIONS -->
+    <div class="card">
+      <h2>📝 Câu hỏi hiểu bài</h2>
+  
+      <div class="question" *ngFor="let q of questions; let i = index">
+        <p>{{ i + 1 }}. {{ q.question }}</p>
+  
+        <label class="option" *ngFor="let opt of q.options">
+          <input type="radio" name="q{{ i }}" />
+          {{ opt }}
+        </label>
+      </div>
+  
+      <div class="footer">
+        <button class="btn-primary">Kiểm tra đáp án</button>
+        <button class="btn">Nghe lại</button>
+      </div>
+    </div>
+  
+  </div>
+  

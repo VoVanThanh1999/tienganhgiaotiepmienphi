@@ -12,7 +12,9 @@
 <!-- CONTENT -->
 <section class="container">
   <div class="tense-grid">
-    <div class="card" *ngFor="let item of tenses">
+    <div class="card" *ngFor="let item of tenses"
+    [routerLink]="['/study/tense/', item.slug]"
+    >
       <span class="badge">{{ item.badge }}</span>
       <h3>{{ item.title }}</h3>
       <p class="use">{{ item.use }}</p>

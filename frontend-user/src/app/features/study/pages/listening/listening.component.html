@@ -1,0 +1,47 @@
+<div class="listening-page">
+    <div class="container">
+  
+      <!-- HEADER -->
+      <h1>Luyện nghe giao tiếp</h1>
+      <p class="sub">
+        Nghe – hiểu – phản xạ tiếng Anh qua hội thoại ngắn mỗi ngày.
+      </p>
+  
+      <!-- TODAY -->
+      <div class="today-card">
+        <span class="badge">🎯 Gợi ý hôm nay</span>
+        <h2>{{ today.title }}</h2>
+        <p>⏱ {{ today.duration }} · {{ today.level }}</p>
+        <button class="btn-primary">Bắt đầu nghe</button>
+      </div>
+  
+      <!-- CATEGORIES -->
+      <div class="card-grid">
+        <div
+          class="category-card"
+          *ngFor="let item of categories"
+        >
+          <span class="badge">{{ item.level }}</span>
+  
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+  
+          <div class="progress">
+            <span [style.width.%]="getProgress(item)"></span>
+          </div>
+  
+          <p class="progress-text">
+            Hoàn thành {{ item.completed }} / {{ item.total }} bài
+          </p>
+  
+          <button class="btn-primary"
+          (click)="goToList(item.link)"
+          >
+            {{ item.action }}
+          </button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  

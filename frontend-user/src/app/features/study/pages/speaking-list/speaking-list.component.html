@@ -1,0 +1,51 @@
+<div class="container-page">
+
+    <!-- HEADER -->
+    <h1 class="title-page">Danh sách bài luyện nói</h1>
+    <p class="subtitle">
+      Chọn 1 bài và bắt đầu nói ngay – không cần chuẩn bị.
+    </p>
+  
+    <!-- FILTER -->
+    <div class="filter">
+      <select
+        class="select"
+        [(ngModel)]="levelFilter"
+      >
+        <option value="all">Tất cả level</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+      </select>
+    </div>
+  
+    <!-- LIST -->
+    <div class="list">
+      <div
+        class="item"
+        *ngFor="let item of filteredItems"
+        (click)="goToDetail(item)"
+      >
+        <div class="left">
+          <div class="icon">🎤</div>
+          <div>
+            <div class="item-title">{{ item.title }}</div>
+            <div class="meta">
+              ⏱ {{ item.duration }} giây · {{ item.level }}
+            </div>
+          </div>
+        </div>
+  
+        <span
+          class="badge"
+          [ngClass]="{
+            'badge-new': item.status === 'new',
+            'badge-done': item.status === 'done'
+          }"
+        >
+          {{ item.status === 'new' ? 'Chưa luyện' : 'Đã luyện' }}
+        </span>
+      </div>
+    </div>
+  
+  </div>
+  

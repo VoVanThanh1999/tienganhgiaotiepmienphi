@@ -30,7 +30,7 @@ const routes: Routes = [
   {
     path: 'study',
     component: UserLayoutComponent,
-    loadChildren: () => import('./features/study/study.module').then(m => m.StudyModule)
+    loadChildren: () => import('./features/study/study.module').then(m => m.StudyModule),
   },
   {
     path: 'welcome',

@@ -16,11 +16,11 @@ h2 {
 }
 
 .hero-grid {
-  @apply grid items-center gap-12 md:grid-cols-2;
+  @apply grid items-center gap-12 grid-cols-[6fr_4fr];
 }
 
 .hero h1 {
-  @apply text-4xl font-bold;
+  @apply text-5xl font-bold;
 }
 
 .hero-main {

@@ -1,0 +1,66 @@
+<div class="container mx-auto max-w-[1100px] px-6 py-6">
+
+    <!-- HEADER -->
+    <h1 class="text-[30px] font-bold text-gray-800">
+      {{ header.title }}
+    </h1>
+    <p class="mt-2 text-gray-500">
+      {{ header.subtitle }}
+    </p>
+  
+    <!-- DAILY -->
+    <div class="card mt-6">
+      <span class="badge">{{ daily.badge }}</span>
+  
+      <h2 class="mt-2 text-xl font-semibold text-gray-800">
+        {{ daily.title }}
+      </h2>
+  
+      <p class="mt-1 text-gray-600">
+        ⏱ {{ daily.time }} · {{ daily.level }}
+      </p>
+  
+      <a
+        class="btn inline-block cursor-pointer"
+        routerLink="/speaking/today"
+      >
+        Bắt đầu nói
+      </a>
+    </div>
+  
+    <!-- CATEGORIES -->
+    <div class="speaking-grid mt-7">
+      <div
+        *ngFor="let c of categories"
+        class="card hover-card"
+      >
+        <span class="badge">{{ c.level }}</span>
+  
+        <h3 class="mt-2 text-lg font-semibold">
+          {{ c.title }}
+        </h3>
+  
+        <p class="mt-1 text-gray-600">
+          {{ c.desc }}
+        </p>
+  
+        <!-- PROGRESS -->
+        <div class="progress mt-3">
+          <span [style.width.%]="c.progress"></span>
+        </div>
+  
+        <p class="mt-2 text-sm text-gray-500">
+          {{ c.total ? 'Hoàn thành ' + c.done + ' / ' + c.total + ' bài' : 'Chưa bắt đầu' }}
+        </p>
+  
+        <a
+          class="btn inline-block cursor-pointer"
+          (click)="goToDetail(c.id)"
+          >
+          {{ c.action }}
+        </a>
+      </div>
+    </div>
+  
+  </div>
+  

@@ -16,6 +16,7 @@ interface Knowledge {
   icon: string;
   title: string;
   desc: string;
+  lblink: string;
   link: string;
 }
 
@@ -66,37 +67,45 @@ export class HomeComponent {
       icon: '🕒',
       title: 'Các thì hay dùng',
       desc: 'Hiện tại, quá khứ, tương lai qua ví dụ giao tiếp.',
-      link: '→ Xem bài viết'
+      lblink: '→ Xem bài viết',
+      link: 'tenses',
+
     },
     {
       icon: '🔁',
       title: 'Động từ bất quy tắc',
       desc: 'Học V1 · V2 · V3 theo ngữ cảnh.',
-      link: '→ Xem danh sách'
+      lblink: '→ Xem danh sách',
+      link: 'irregular-verbs',
     },
     {
       icon: '📝',
       title: 'Tính từ & Trạng từ',
       desc: 'Dùng đúng trong nói & viết.',
-      link: '→ Xem chi tiết'
+      lblink: '→ Xem chi tiết',
+      link: 'adjective-adverb',
     },
     {
       icon: '📐',
       title: 'Cấu trúc câu',
       desc: 'too / enough, so / such, câu điều kiện…',
-      link: '→ Xem cấu trúc'
+      lblink: '→ Xem cấu trúc',
+      link: 'structures',
     },
     {
       icon: '🎧',
       title: 'Luyện nghe',
       desc: 'Nghe ngắn, quen âm, nói tự nhiên.',
-      link: '→ Luyện nghe'
+      lblink: '→ Luyện nghe',
+      link: 'listening',
     },
     {
       icon: '🗣',
       title: 'Luyện nói',
       desc: 'Nói về cảm xúc, công việc, đời sống.',
-      link: '→ Luyện nói'
+      lblink: '→ Luyện nói',
+      link: 'speaking',
+
     }
   ];
 }

@@ -32,7 +32,8 @@ const localizeRoute = (
        * It is implemented in this way until this issue is resolved.
        * https://github.com/angular/angular/issues/27148
        */
-      router.navigateByUrl(`${targetLanguage}${state.url}`, { replaceUrl: true });
+      const shouldReplace = !router.navigated;
+      router.navigateByUrl(`${targetLanguage}${state.url}`, { replaceUrl: shouldReplace });
       return false;
     }
     serverService.setRedirectResponse(`/${targetLanguage}${state.url}`, false);

@@ -6,6 +6,7 @@ interface TenseItem {
   use: string;
   example: string;
   meaning: string;
+  slug: string;
 }
 
 @Component({
@@ -21,42 +22,48 @@ export class TensesComponent {
       title: 'Present Simple (Hiện tại đơn)',
       use: 'Dùng để nói về thói quen, sự thật, công việc hằng ngày.',
       example: 'I work as a Java developer.',
-      meaning: 'Tôi làm lập trình viên Java.'
+      meaning: 'Tôi làm lập trình viên Java.',
+      slug: 'present-simple'
     },
     {
       badge: 'Rất hay dùng',
       title: 'Present Continuous (Hiện tại tiếp diễn)',
       use: 'Dùng để nói việc đang xảy ra ngay lúc nói.',
       example: 'I am learning English now.',
-      meaning: 'Tôi đang học tiếng Anh.'
+      meaning: 'Tôi đang học tiếng Anh.',
+      slug: 'present-simple'
     },
     {
       badge: 'Rất hay dùng',
       title: 'Past Simple (Quá khứ đơn)',
       use: 'Dùng để kể chuyện đã xảy ra trong quá khứ.',
       example: 'I worked at FPT last year.',
-      meaning: 'Tôi đã làm ở FPT năm ngoái.'
+      meaning: 'Tôi đã làm ở FPT năm ngoái.',
+      slug: 'present-simple'
     },
     {
       badge: 'Hay dùng',
       title: 'Future Simple (Tương lai đơn)',
       use: 'Dùng để nói dự định, quyết định tức thời.',
       example: 'I will practice English tonight.',
-      meaning: 'Tối nay tôi sẽ luyện tiếng Anh.'
+      meaning: 'Tối nay tôi sẽ luyện tiếng Anh.',
+      slug: 'present-simple'
     },
     {
       badge: 'Hay dùng',
       title: 'Present Perfect (Hiện tại hoàn thành)',
       use: 'Dùng để nói trải nghiệm, việc đã làm nhưng còn liên quan hiện tại.',
       example: 'I have learned Java for 2 years.',
-      meaning: 'Tôi đã học Java được 2 năm.'
+      meaning: 'Tôi đã học Java được 2 năm.',
+      slug: 'present-simple'
     },
     {
       badge: 'Nâng cao',
       title: 'Past Continuous (Quá khứ tiếp diễn)',
       use: 'Dùng để mô tả hành động đang xảy ra trong quá khứ.',
       example: 'I was studying when you called.',
-      meaning: 'Tôi đang học thì bạn gọi.'
+      meaning: 'Tôi đang học thì bạn gọi.',
+      slug: 'present-simple'
     }
   ];
 }

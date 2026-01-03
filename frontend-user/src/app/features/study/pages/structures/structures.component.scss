@@ -1,0 +1,49 @@
+.page {
+    @apply min-h-screen bg-[#f9fbf9];
+  }
+  
+  .container {
+    @apply mx-auto max-w-[1100px] px-6 py-8;
+  }
+  
+  /* HEADER */
+  .page-title {
+    @apply text-[28px] font-bold text-gray-900;
+  }
+  
+  .page-sub {
+    @apply mt-1 text-sm text-gray-500;
+  }
+  
+  /* GRID */
+  .sentence-grid {
+    @apply mt-7 grid gap-5;
+  
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* CARD */
+  .card {
+    @apply cursor-pointer rounded-[18px] border border-gray-200 bg-white p-6
+           transition duration-200;
+  
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+    }
+  }
+  
+  .title {
+    @apply text-lg font-semibold text-[#2e7d32];
+  }
+  
+  .formula {
+    @apply mt-2 rounded-xl bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700;
+  }
+  
+  .example {
+    @apply mt-2 text-sm text-gray-500;
+  }
+  

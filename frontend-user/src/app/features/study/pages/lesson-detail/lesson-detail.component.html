@@ -1,0 +1,125 @@
+<!-- HEADER -->
+<header class="header">
+    <div class="container menu">
+      <div class="logo">English Hub</div>
+      <nav>
+        <a routerLink="/">Trang chủ</a>
+        <a routerLink="/lessons">Bài học</a>
+        <a routerLink="/speaking">Luyện nói</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- HERO -->
+  <div
+    class="hero"
+    [ngStyle]="{ 'background-image': 'url(' + lesson.heroImage + ')' }"
+  >
+    <div class="hero-overlay">
+      <div class="container text-white">
+        <span class="hero-badge">🔥 DAY {{ lesson.day }}</span>
+        <h1>{{ lesson.title }}</h1>
+        <p>{{ lesson.description }}</p>
+  
+        <div class="hero-meta">
+          <span class="meta-tag">Level {{ lesson.level }}</span>
+          <span class="meta-tag">⏱ {{ lesson.duration }}</span>
+          <span class="meta-tag">🎯 {{ lesson.skill }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- OBJECTIVES -->
+  <section class="container section">
+    <div class="block">
+      <h2>🌟 Mục tiêu bài học</h2>
+      <ul>
+        <li *ngFor="let o of objectives">{{ o }}</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- VOCAB -->
+  <section class="container section">
+    <div class="block">
+      <h2>1️⃣ Vocabulary</h2>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Từ</th>
+            <th>IPA</th>
+            <th>Nghĩa</th>
+            <th>Ví dụ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of vocabularies">
+            <td class="text-green-700 font-semibold">{{ v.word }}</td>
+            <td>{{ v.ipa }}</td>
+            <td>{{ v.meaning }}</td>
+            <td>{{ v.example }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <!-- GRAMMAR -->
+  <section class="container section">
+    <div class="block">
+      <h2>2️⃣ Grammar</h2>
+      <div class="box">
+        <div *ngFor="let g of grammarRules">{{ g }}</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- LISTENING -->
+  <section class="container section">
+    <div class="block">
+      <h2>3️⃣ Listening</h2>
+      <div class="video-grid">
+        <div class="video-card" *ngFor="let v of listeningVideos">
+          <div class="video-title">{{ v.title }}</div>
+          <iframe [src]="v.url"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SHADOWING -->
+  <section class="container section">
+    <div class="block">
+      <h2>4️⃣ Shadowing Script</h2>
+      <p *ngFor="let s of shadowingScript">{{ s }}</p>
+    </div>
+  </section>
+  
+  <!-- NOTE -->
+  <button class="note-toggle" (click)="toggleNote()">📝</button>
+  
+  <div class="note-panel" *ngIf="showNote">
+    <div class="note-header">
+      Ghi chú
+      <div class="note-tabs">
+        <span (click)="switchTab('write')">Viết</span>
+        <span (click)="switchTab('history')">Lịch sử</span>
+      </div>
+    </div>
+  
+    <div class="note-content" *ngIf="noteTab === 'write'">
+      <textarea placeholder="Ghi chú của bạn..."></textarea>
+      <button class="btn primary">Lưu</button>
+    </div>
+  
+    <div class="note-content" *ngIf="noteTab === 'history'">
+      <p class="text-sm text-gray-500">Chưa có ghi chú</p>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    © 2025 English Hub – Học tiếng Anh miễn phí cho người Việt
+  </footer>
+  

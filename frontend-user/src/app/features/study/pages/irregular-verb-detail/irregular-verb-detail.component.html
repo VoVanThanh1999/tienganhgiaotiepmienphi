@@ -1,0 +1,49 @@
+<div class="container" *ngIf="verb">
+    <!-- HEADER -->
+    <div class="card">
+      <h1>
+        Irregular Verb:
+        <span class="text-green">{{ verb.base }}</span>
+      </h1>
+  
+      <div class="verb-box">
+        <div class="verb">V1: {{ verb.base }}</div>
+        <div class="verb">V2: {{ verb.past }}</div>
+        <div class="verb">V3: {{ verb.pp }}</div>
+      </div>
+    </div>
+  
+    <!-- CONTEXT -->
+    <div class="card context">
+      <h2>📌 Ngữ cảnh sử dụng</h2>
+      <p>{{ verb.description }}</p>
+  
+      <div class="example">
+        <div *ngFor="let ex of verb.examples">• {{ ex }}</div>
+      </div>
+    </div>
+  
+    <!-- EXERCISE -->
+  <div class="card">
+    <h2>✏️ Bài tập luyện tập</h2>
+
+    <div
+      class="question"
+      *ngFor="let q of questions; let i = index"
+    >
+      <p>{{ q.text }}</p>
+
+      <div class="options">
+        <div
+          class="option"
+          *ngFor="let opt of q.options"
+          [class.active]="selectedAnswers[i] === opt"
+          (click)="selectAnswer(i, opt)"
+        >
+          {{ opt }}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  

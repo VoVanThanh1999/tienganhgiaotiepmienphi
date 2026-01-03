@@ -8,19 +8,17 @@
       <a href="#" class="nav-link">Trang chủ</a>
       <a routerLink="/study/lessonlist" class="nav-link">Bài học</a>
       <a routerLink="/study/progress" class="nav-link">Progress</a>
-      <a routerLink="/study/tense-detail" class="nav-link">tense-detail</a>
+      <a routerLink="/study/structures" class="nav-link">structures</a>
       <a routerLink="/study/tenses" class="nav-link">tense</a>
+      <a routerLink="/study/irregular-verbs" class="nav-link">IrregularVerbs</a>
+      
     </nav>
 
     <div class="header-right">
       <ng-template #guest>
         <a routerLink="/auth/login" class="btn btn-outline">Đăng nhập</a>
         <a routerLink="/auth/register" class="btn btn-primary">Đăng ký</a>
-        <button (click)="logout()" type="button" class="logout-btn">
-          <i class="fa-solid fa-right-from-bracket"></i>
-          <span>Đăng xuất</span>
-        </button>
-      </ng-template>
+              </ng-template>
 
       <ng-container *ngIf="user$ | async as user; else guest">
         <div 

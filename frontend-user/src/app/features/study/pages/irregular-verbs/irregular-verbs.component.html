@@ -1,0 +1,71 @@
+<div class="container">
+  <h1>Động từ bất quy tắc</h1>
+  <p class="sub">Học V1 – V2 – V3 theo ngữ cảnh, không học vẹt.</p>
+
+  <!-- FILTER -->
+  <div class="filter">
+    <select [(ngModel)]="selectedLevel">
+      <option value="ALL">All levels</option>
+      <option *ngFor="let lv of levels.slice(1)" [value]="lv">
+        {{ lv }}
+      </option>
+    </select>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Base (V1)</th>
+          <th>Past (V2)</th>
+          <th>PP (V3)</th>
+          <th>Nghĩa</th>
+          <th>Ví dụ</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let v of pagedVerbs"
+          (click)="goToDetail(v.base)"
+          class="row-click"
+        >
+          <td class="verb">{{ v.base }}</td>
+          <td>{{ v.past }}</td>
+          <td>{{ v.pp }}</td>
+          <td>{{ v.meaning }}</td>
+          <td>{{ v.example }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="pagination" *ngIf="totalPages.length > 1">
+    <button
+      class="page-btn"
+      (click)="goToPage(currentPage - 1)"
+      [disabled]="currentPage === 1"
+    >
+      ←
+    </button>
+
+    <button
+      *ngFor="let p of totalPages"
+      class="page-btn"
+      [class.active]="p === currentPage"
+      (click)="goToPage(p)"
+    >
+      {{ p }}
+    </button>
+
+    <button
+      class="page-btn"
+      (click)="goToPage(currentPage + 1)"
+      [disabled]="currentPage === totalPages.length"
+    >
+      →
+    </button>
+  </div>
+</div>

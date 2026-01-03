@@ -1,0 +1,21 @@
+<div class="page">
+    <div class="container">
+      <h1 class="page-title">Cấu trúc câu thông dụng</h1>
+      <p class="page-sub">
+        Các cấu trúc tiếng Anh thường gặp trong giao tiếp và công việc.
+      </p>
+  
+      <div class="sentence-grid">
+        <div
+          class="card"
+          *ngFor="let item of structures"
+          [routerLink]="['/study/structure', item.slug]"
+        >
+          <div class="title">{{ item.title }}</div>
+          <div class="formula">{{ item.formula }}</div>
+          <div class="example">{{ item.example }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
